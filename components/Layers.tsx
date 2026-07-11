@@ -19,11 +19,14 @@ const LAYERS = [
   { name: "The Interfaces", core: false, desc: "How your team actually uses it, inside the tools they already work in." },
 ];
 
-const STEP = 0.13; // scrub window per layer
-const DUR = 0.2;
+const STEP = 0.115; // scrub window per layer
+const DUR = 0.18;
+const FINALE_FROM = 0.8; // last stretch: the layers become one glowing system
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const layerT = (p: number, i: number) =>
   smooth(Math.min(1, Math.max(0, (p - i * STEP) / DUR)));
+const finaleT = (p: number) =>
+  smooth(Math.min(1, Math.max(0, (p - FINALE_FROM) / 0.16)));
 
 export function Layers() {
   const sectionRef = React.useRef<HTMLDivElement>(null);
@@ -48,28 +51,34 @@ export function Layers() {
     LAYERS.length - 1,
     Math.floor(progress / STEP)
   );
+  const ft = finaleT(progress); // 0 → 1 as the stack fuses into one system
 
   return (
-    <div ref={sectionRef} className="relative h-[320vh]">
+    <div ref={sectionRef} className="relative h-[360vh]">
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
         <div className="max-w-[1100px] mx-auto px-5 w-full grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 items-center">
           {/* The stack */}
           <div className="relative h-[420px] sm:h-[480px] flex items-center justify-center" aria-hidden="true">
-            {/* Glow pool under the finished stack */}
+            {/* Glow pool under the stack — blooms as the layers fuse */}
             <div
-              className="absolute left-1/2 top-[68%] -translate-x-1/2 w-[420px] h-[130px] rounded-[50%] transition-opacity duration-500"
+              className="absolute left-1/2 top-[68%] -translate-x-1/2 w-[420px] h-[130px] rounded-[50%]"
               style={{
-                background:
-                  "radial-gradient(ellipse, rgba(139,92,246,0.28), transparent 70%)",
+                background: `radial-gradient(ellipse, rgba(139,92,246,${0.22 + ft * 0.38}), transparent 70%)`,
                 opacity: settled ? 1 : 0.15 + progress * 0.4,
                 filter: "blur(6px)",
+                transform: `translateX(-50%) scale(${1 + ft * 0.25})`,
               }}
             />
             {LAYERS.map((layer, i) => {
               const t = layerT(progress, i);
               const landed = t > 0.95;
               const isActive = i === activeIdx && !settled;
-              const y = (1 - t) * 150 + 90 - i * 44;
+              // Finale: the stack compresses into one tight, glowing unit.
+              const spacing = 44 - 30 * ft;
+              const y = (1 - t) * 150 + 90 - i * spacing - ft * 60;
+              const fusedBorder = `color-mix(in srgb, var(--krk-accent-default) ${Math.round(
+                ft * 100
+              )}%, ${layer.core ? "color-mix(in srgb, var(--krk-accent-default) 55%, var(--krk-line-strong))" : "var(--krk-line-strong)"})`;
               return (
                 <div
                   key={layer.name}
@@ -83,21 +92,28 @@ export function Layers() {
                         : "color-mix(in srgb, var(--krk-surface-raised) 88%, transparent)",
                     borderColor: isActive
                       ? "var(--krk-accent-default)"
-                      : layer.core
-                        ? "color-mix(in srgb, var(--krk-accent-default) 55%, var(--krk-line-strong))"
-                        : "var(--krk-line-strong)",
+                      : fusedBorder,
                     boxShadow: isActive
                       ? "var(--krk-glow-accent-soft)"
-                      : "0 18px 40px rgba(0,0,0,0.35)",
+                      : ft > 0
+                        ? `0 0 ${10 + ft * 34}px rgba(139,92,246,${ft * 0.4}), 0 18px 40px rgba(0,0,0,${0.35 - ft * 0.15})`
+                        : "0 18px 40px rgba(0,0,0,0.35)",
                     backgroundImage:
                       i === 0
                         ? undefined
                         : "repeating-linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, var(--krk-line-default) 55%, transparent) 46px 47px)",
-                    transition: "border-color 200ms, box-shadow 300ms",
+                    transition: "border-color 200ms",
                   }}
                 />
               );
             })}
+            {/* Finale caption: the layers read as one system */}
+            <p
+              className="absolute left-1/2 -translate-x-1/2 bottom-2 text-center font-bold text-lg whitespace-nowrap"
+              style={{ opacity: ft }}
+            >
+              Six layers. <span className="grad">One system.</span>
+            </p>
           </div>
 
           {/* The list */}

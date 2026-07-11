@@ -41,6 +41,15 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* Glow that fades in once the parent .reveal becomes visible (staged reveals). */
+.reveal .glow-in {
+  box-shadow: none;
+  transition: box-shadow 900ms var(--krk-easing-entrance) 350ms;
+}
+.reveal.is-visible .glow-in {
+  box-shadow: var(--krk-glow-accent-soft);
+}
+
 /* Gradient text accent (violet -> blue), used for emphasised words. */
 .grad {
   background: linear-gradient(90deg, var(--krk-accent-secondary-text), var(--krk-accent-text));

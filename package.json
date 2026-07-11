@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@kuroko-studios/design": "git+https://github.com/kuroko-studios/design-system.git",
+    "@kuroko-studios/design": "github:kuroko-studios/design-system",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"

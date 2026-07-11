@@ -258,7 +258,7 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
             className="absolute inset-x-0 px-5 text-center transition-opacity duration-300"
             style={{ opacity: captionOpacity(CAPTIONS[0].from, CAPTIONS[0].to) }}
           >
-            <p className="krk-section-label mb-4 !text-accent-text">AI THAT DOES THE WORK</p>
+            <p className="krk-section-label mb-4 !text-accent-tertiary-text">AI THAT DOES THE WORK</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight max-w-[820px] mx-auto leading-[1.08]">
               Give AI <span className="grad italic">a job</span>,<br />
               not a question.
@@ -288,7 +288,7 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
               className="absolute inset-x-0 bottom-16 px-5 text-center transition-opacity duration-300"
               style={{ opacity: captionOpacity(c.from, c.to) }}
             >
-              <p className="krk-section-label mb-2 !text-accent-text">{c.eyebrow}</p>
+              <p className="krk-section-label mb-2 !text-accent-tertiary-text">{c.eyebrow}</p>
               <p className="text-xl sm:text-2xl font-semibold">{c.line}</p>
             </div>
           ))}

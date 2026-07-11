@@ -5,7 +5,8 @@ import { Reveal } from "@/components/Reveal";
 const CHECK_URL = "https://kuroko-hq.vercel.app/check";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="krk-section-label mb-3 !text-accent-text">{children}</p>;
+  // Tertiary teal — the complementary counterpoint to the violet field.
+  return <p className="krk-section-label mb-3 !text-accent-tertiary-text">{children}</p>;
 }
 
 function Section({
@@ -56,26 +57,22 @@ function TwoWorlds() {
           </div>
         </Reveal>
 
-        {/* THE JUMP */}
+        {/* THE JUMP — appears between the two worlds */}
         <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <span
-            className="krk-badge krk-badge--accent !text-sm !px-5 !py-3 font-bold tracking-widest"
-            style={{ boxShadow: "var(--krk-glow-accent)" }}
-          >
-            THE JUMP →
-          </span>
+          <Reveal delay={350}>
+            <span
+              className="krk-badge krk-badge--accent !text-sm !px-5 !py-3 font-bold tracking-widest"
+              style={{ boxShadow: "var(--krk-glow-accent)" }}
+            >
+              THE JUMP →
+            </span>
+          </Reveal>
         </div>
 
-        {/* AI does */}
-        <Reveal delay={120}>
-          <div
-            className="krk-card p-7 h-full border-[color:var(--krk-accent-default)]"
-            style={{ boxShadow: "var(--krk-glow-accent-soft)" }}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <p className="krk-section-label !text-accent-text">LEVEL 2 · AI DOES</p>
-              <span className="krk-badge krk-badge--accent">TODAY</span>
-            </div>
+        {/* AI does — fades in after "You ask", glow ramping up last */}
+        <Reveal delay={600}>
+          <div className="krk-card p-7 h-full border-[color:var(--krk-accent-default)] glow-in">
+            <p className="krk-section-label !text-accent-text mb-4">LEVEL 2 · AI DOES</p>
             <h3 className="text-2xl font-bold mb-5">AI does.</h3>
             <div className="rounded-lg border border-line bg-surface-page p-4 text-sm font-mono space-y-2">
               <p className="text-accent-text">you: start my week</p>
@@ -120,32 +117,16 @@ function Brain() {
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-        <Reveal>
-          <div className="krk-card p-7 h-full">
-            <h3 className="text-lg font-bold mb-2">
-              Many businesses, <span className="grad">no extra cost.</span>
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              Run as many as you like from one Brain — a folder each. It loads only the one
-              you&apos;re working on, so one client&apos;s world never bleeds into another&apos;s.
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={120}>
-          <div className="krk-card p-7 h-full">
-            <h3 className="text-lg font-bold mb-2">
-              A team, <span className="grad">one source of truth.</span>
-            </h3>
-            <p className="text-text-secondary leading-relaxed">
-              Put the Brain in a shared space and the whole team works from the same place.
-              One person owns it; the rest read and contribute.
-            </p>
-          </div>
-        </Reveal>
-      </div>
       <Reveal>
-        <p className="text-center text-lg font-semibold mt-10">One brain scales with you.</p>
+        <div className="krk-card p-7 mt-12 max-w-[680px]">
+          <h3 className="text-lg font-bold mb-2">
+            Your team, <span className="grad">one source of truth.</span>
+          </h3>
+          <p className="text-text-secondary leading-relaxed">
+            Put the Brain in a shared space and the whole team works from the same place.
+            One person owns it; the rest read and contribute. One brain scales with you.
+          </p>
+        </div>
       </Reveal>
     </Section>
   );

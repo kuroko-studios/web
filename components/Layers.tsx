@@ -52,6 +52,9 @@ export function Layers() {
     Math.floor(progress / STEP)
   );
   const ft = finaleT(progress); // 0 → 1 as the stack fuses into one system
+  // Finale glow shifts from brand violet to the teal counterpoint.
+  const mix = (a: number, b: number) => Math.round(a + (b - a) * ft);
+  const glowRgb = `${mix(139, 45)},${mix(92, 212)},${mix(246, 191)}`; // violet → teal
 
   return (
     <div ref={sectionRef} className="relative h-[360vh]">
@@ -63,7 +66,7 @@ export function Layers() {
             <div
               className="absolute left-1/2 top-[68%] -translate-x-1/2 w-[420px] h-[130px] rounded-[50%]"
               style={{
-                background: `radial-gradient(ellipse, rgba(139,92,246,${0.22 + ft * 0.38}), transparent 70%)`,
+                background: `radial-gradient(ellipse, rgba(${glowRgb},${0.22 + ft * 0.38}), transparent 70%)`,
                 opacity: settled ? 1 : 0.15 + progress * 0.4,
                 filter: "blur(6px)",
                 transform: `translateX(-50%) scale(${1 + ft * 0.25})`,
@@ -76,7 +79,7 @@ export function Layers() {
               // Finale: the stack compresses into one tight, glowing unit.
               const spacing = 44 - 30 * ft;
               const y = (1 - t) * 150 + 90 - i * spacing - ft * 60;
-              const fusedBorder = `color-mix(in srgb, var(--krk-accent-default) ${Math.round(
+              const fusedBorder = `color-mix(in srgb, var(--krk-accent-tertiary) ${Math.round(
                 ft * 100
               )}%, ${layer.core ? "color-mix(in srgb, var(--krk-accent-default) 55%, var(--krk-line-strong))" : "var(--krk-line-strong)"})`;
               return (
@@ -96,7 +99,7 @@ export function Layers() {
                     boxShadow: isActive
                       ? "var(--krk-glow-accent-soft)"
                       : ft > 0
-                        ? `0 0 ${10 + ft * 34}px rgba(139,92,246,${ft * 0.4}), 0 18px 40px rgba(0,0,0,${0.35 - ft * 0.15})`
+                        ? `0 0 ${10 + ft * 34}px rgba(${glowRgb},${ft * 0.4}), 0 18px 40px rgba(0,0,0,${0.35 - ft * 0.15})`
                         : "0 18px 40px rgba(0,0,0,0.35)",
                     backgroundImage:
                       i === 0
@@ -112,7 +115,7 @@ export function Layers() {
               className="absolute left-1/2 -translate-x-1/2 bottom-2 text-center font-bold text-lg whitespace-nowrap"
               style={{ opacity: ft }}
             >
-              Six layers. <span className="grad">One system.</span>
+              Six layers. <span className="text-accent-tertiary-text">One system.</span>
             </p>
           </div>
 

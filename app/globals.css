@@ -1,0 +1,50 @@
+@import "tailwindcss";
+/* Kuroko Design System: tokens + Tailwind theme + component classes. */
+@import "@kuroko-studios/design/theme.css";
+@import "@kuroko-studios/design/components.css";
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--krk-surface-page);
+  color: var(--krk-text-primary);
+  font-family: var(--krk-font-family-sans);
+  font-size: var(--krk-font-size-md);
+  line-height: var(--krk-line-height-normal);
+}
+
+::selection {
+  background: var(--krk-accent-default);
+  color: var(--krk-text-on-accent);
+}
+
+:focus-visible {
+  outline: none;
+  border-color: var(--krk-accent-default);
+  box-shadow: 0 0 0 3px var(--krk-accent-tint);
+}
+
+/* Scroll-reveal: sections fade+rise in when they enter the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--krk-duration-slow) var(--krk-easing-entrance),
+    transform var(--krk-duration-slow) var(--krk-easing-entrance);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Gradient text accent (violet -> blue), used for emphasised words. */
+.grad {
+  background: linear-gradient(90deg, var(--krk-accent-secondary-text), var(--krk-accent-text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

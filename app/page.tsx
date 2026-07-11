@@ -2,7 +2,7 @@ import { Hero } from "@/components/Hero";
 import { Layers } from "@/components/Layers";
 import { Reveal } from "@/components/Reveal";
 
-const CHECK_URL = "https://kuroko-hq.vercel.app/check";
+const CHECK_URL = "/check";
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   // Tertiary teal — the complementary counterpoint to the violet field.

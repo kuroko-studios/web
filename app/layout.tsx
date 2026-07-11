@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Kuroko builds the quiet AI system that does the work for your business: one brain, your tools connected, jobs handed over and handed back done.",
 };
 
-const CHECK_URL = "https://kuroko-hq.vercel.app/check"; // moves to /check here once migrated
+const CHECK_URL = "/check";
 
 function Nav() {
   return (

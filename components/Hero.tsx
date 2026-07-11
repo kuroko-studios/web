@@ -130,10 +130,11 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
     const violet = cs.getPropertyValue("--krk-accent-default").trim() || "#8B5CF6";
     const blue = cs.getPropertyValue("--krk-accent-secondary").trim() || "#6366F1";
     const fog = cs.getPropertyValue("--krk-text-secondary").trim() || "#A7A2C0";
+    const teal = cs.getPropertyValue("--krk-accent-tertiary-text").trim() || "#2DD4BF";
     const palette = [violet, blue, fog];
 
     // Pre-rendered glow sprites (fast: drawImage instead of shadowBlur).
-    const sprites = palette.map((c) => {
+    const makeSprite = (c: string) => {
       const s = document.createElement("canvas");
       s.width = s.height = 32;
       const g = s.getContext("2d")!;
@@ -144,7 +145,9 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
       g.fillStyle = grad;
       g.fillRect(0, 0, 32, 32);
       return s;
-    });
+    };
+    const sprites = palette.map(makeSprite);
+    const tealSprite = makeSprite(teal);
 
     let raf = 0;
     let w = 0, h = 0, dpr = 1;
@@ -181,10 +184,16 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
       const dx = (w - dw) / 2;
       const dy = (h - dh) / 2 + h * 0.03;
 
+      // Once the dashboard has formed, its glow shifts violet -> teal
+      // (the brand's completion colour — same rule as the layers finale).
+      const fin = smooth(Math.min(1, Math.max(0, (p - 0.72) / 0.24)));
+      const mixc = (a: number, b: number) => Math.round(a + (b - a) * fin);
+      const bloomRgb = `${mixc(139, 45)},${mixc(92, 212)},${mixc(246, 191)}`;
+
       // Ambient bloom behind the assembling dashboard.
       const bloom = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, Math.max(w, h) * 0.5);
-      bloom.addColorStop(0, `rgba(139,92,246,${0.05 + p * 0.09})`);
-      bloom.addColorStop(1, "rgba(139,92,246,0)");
+      bloom.addColorStop(0, `rgba(${bloomRgb},${0.05 + p * 0.09})`);
+      bloom.addColorStop(1, `rgba(${bloomRgb},0)`);
       ctx.fillStyle = bloom;
       ctx.fillRect(0, 0, w, h);
 
@@ -209,20 +218,33 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
           alpha = 0.5 + heartbeat * 0.5;
           size = pt.size * (1.1 + heartbeat * 0.4);
         }
-        ctx.globalAlpha = alpha;
         const sprite = sprites[pt.color];
         // Glow tightens as particles assemble: soft bloom in the void,
         // crisp points once the dashboard has formed.
         const glowScale = 6 - 3.9 * t;
         const d = size * glowScale;
+        // Crossfade to teal as the finished UI settles.
+        ctx.globalAlpha = alpha * (1 - fin * 0.9);
         ctx.drawImage(sprite, x - d / 2, y - d / 2, d, d);
+        if (fin > 0) {
+          ctx.globalAlpha = alpha * fin;
+          ctx.drawImage(tealSprite, x - d / 2, y - d / 2, d, d);
+        }
         if (t > 0.55) {
           // Solid core for a sharp finished line.
-          ctx.globalAlpha = Math.min(1, alpha + 0.25) * ((t - 0.55) / 0.45);
+          const coreA = Math.min(1, alpha + 0.25) * ((t - 0.55) / 0.45);
+          ctx.globalAlpha = coreA * (1 - fin);
           ctx.fillStyle = palette[pt.color];
           ctx.beginPath();
           ctx.arc(x, y, size * 0.75, 0, Math.PI * 2);
           ctx.fill();
+          if (fin > 0) {
+            ctx.globalAlpha = coreA * fin;
+            ctx.fillStyle = teal;
+            ctx.beginPath();
+            ctx.arc(x, y, size * 0.75, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
       }
       ctx.globalAlpha = 1;

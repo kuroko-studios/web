@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { Layers } from "@/components/Layers";
 import { Reveal } from "@/components/Reveal";
 
 const CHECK_URL = "https://kuroko-hq.vercel.app/check";
@@ -110,9 +111,12 @@ function Brain() {
         </h2>
         <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
           At the centre is a <strong className="text-text-primary">Brain</strong> — one place
-          that holds how your business actually works: your clients, your tone, your process,
-          your numbers. Your AI works <em>from</em> it, so it acts with real context instead
-          of guessing. Connect your tools, give it jobs, and it gets on with them.
+          that brings together your systems, your knowledge and the data scattered across
+          your tools. Your clients, your tone, your process, your numbers — consolidated
+          into a single view the whole team works from. Your AI acts on it with real context
+          instead of guessing, and you get the kind of{" "}
+          <strong className="text-text-primary">business intelligence</strong> that used to
+          need a data team.
         </p>
       </Reveal>
 
@@ -147,43 +151,45 @@ function Brain() {
   );
 }
 
-/* ------------------------------------------------ the six modules */
-const MODULES = [
-  { name: "The Brain", core: true, desc: "The single place that holds how your business works, so AI acts with real context." },
-  { name: "The Connections", core: true, desc: "Plugs into the tools you already use — email, calendar, invoicing, files — so information flows instead of sitting in silos." },
-  { name: "The Workers", core: false, desc: "AI given specific jobs: drafting the quote, chasing the invoice, answering the enquiry." },
-  { name: "The Engine", core: false, desc: "The always-on layer that runs those jobs in the background, on a schedule, without being asked." },
-  { name: "The Window", core: false, desc: "A built software layer that gives you one clear view of the whole business." },
-  { name: "The Interfaces", core: false, desc: "The ways your team actually uses it, inside the tools they already work in." },
-];
-
-function Modules() {
+/* ------------------------------------------------ human first, AI fast */
+function HumanFirst() {
   return (
-    <Section>
+    <Section className="text-center">
       <Reveal>
-        <Eyebrow>THE PARTS</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-          One architecture. We switch on only what you need.
+        <Eyebrow>THE PHILOSOPHY</Eyebrow>
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+          Human first, <span className="grad italic">AI fast.</span>
         </h2>
-        <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed mb-12">
-          Every business runs the same shape, tuned to fit. You start with the core and grow
-          into the rest — never paying for what you&apos;re not ready for.
+        <p className="text-lg text-text-secondary max-w-[640px] mx-auto leading-relaxed">
+          You&apos;re not replacing your team — you&apos;re reinforcing it. Alongside your
+          people, an AI team that drafts, chases, files and reports around the clock, handing
+          every piece of work back for a human yes. Your people make the calls. The AI makes
+          them faster.
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {MODULES.map((m, i) => (
-          <Reveal key={m.name} delay={i * 70}>
-            <div className="krk-card p-6 h-full">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-bold">{m.name}</h3>
-                {m.core && <span className="krk-badge krk-badge--accent">CORE</span>}
-              </div>
-              <p className="text-text-secondary text-sm leading-relaxed">{m.desc}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
     </Section>
+  );
+}
+
+/* ------------------------------------------------ the six layers */
+function Modules() {
+  return (
+    <section>
+      <div className="max-w-[1100px] mx-auto px-5 pt-24">
+        <Reveal>
+          <Eyebrow>THE PARTS</Eyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            One architecture, built in layers.
+          </h2>
+          <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
+            Every business runs the same shape, tuned to fit. Watch it build — layer by
+            layer, as you scroll. You start with the core and grow into the rest, never
+            paying for what you&apos;re not ready for.
+          </p>
+        </Reveal>
+      </div>
+      <Layers />
+    </section>
   );
 }
 
@@ -398,6 +404,7 @@ export default function HomePage() {
       <Hero checkUrl={CHECK_URL} />
       <TwoWorlds />
       <Brain />
+      <HumanFirst />
       <Modules />
       <PlainEnglish />
       <Questions />

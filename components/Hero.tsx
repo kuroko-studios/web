@@ -207,12 +207,23 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
         let size = pt.size * (1 + swirl * 0.6);
         if (pt.pulse && p > 0.85) {
           alpha = 0.5 + heartbeat * 0.5;
-          size = pt.size * (1.2 + heartbeat * 0.9);
+          size = pt.size * (1.1 + heartbeat * 0.4);
         }
         ctx.globalAlpha = alpha;
         const sprite = sprites[pt.color];
-        const d = size * 6;
+        // Glow tightens as particles assemble: soft bloom in the void,
+        // crisp points once the dashboard has formed.
+        const glowScale = 6 - 3.9 * t;
+        const d = size * glowScale;
         ctx.drawImage(sprite, x - d / 2, y - d / 2, d, d);
+        if (t > 0.55) {
+          // Solid core for a sharp finished line.
+          ctx.globalAlpha = Math.min(1, alpha + 0.25) * ((t - 0.55) / 0.45);
+          ctx.fillStyle = palette[pt.color];
+          ctx.beginPath();
+          ctx.arc(x, y, size * 0.75, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
       ctx.globalAlpha = 1;
       ctx.globalCompositeOperation = "source-over";

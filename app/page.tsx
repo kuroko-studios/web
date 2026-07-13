@@ -1,3 +1,4 @@
+import { BrainDiagram } from "@/components/BrainDiagram";
 import { Hero } from "@/components/Hero";
 import { Layers } from "@/components/Layers";
 import { Reveal } from "@/components/Reveal";
@@ -101,33 +102,41 @@ function TwoWorlds() {
 function Brain() {
   return (
     <Section id="how">
-      <Reveal>
-        <Eyebrow>WHAT WE BUILD</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-          One brain that runs your business.
-        </h2>
-        <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
-          At the centre is a <strong className="text-text-primary">Brain</strong> — one place
-          that brings together your systems, your knowledge and the data scattered across
-          your tools. Your clients, your tone, your process, your numbers — consolidated
-          into a single view the whole team works from. Your AI acts on it with real context
-          instead of guessing, and you get the kind of{" "}
-          <strong className="text-text-primary">business intelligence</strong> that used to
-          need a data team.
-        </p>
-      </Reveal>
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-12 items-center">
+        <div>
+          <Reveal>
+            <Eyebrow>WHAT WE BUILD</Eyebrow>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+              One brain that runs your business.
+            </h2>
+            <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
+              At the centre is a <strong className="text-text-primary">Brain</strong> — one place
+              that brings together your systems, your knowledge and the data scattered across
+              your tools. Your clients, your tone, your process, your numbers — consolidated
+              into a single view the whole team works from. Your AI acts on it with real context
+              instead of guessing, and you get the kind of{" "}
+              <strong className="text-text-primary">business intelligence</strong> that used to
+              need a data team.
+            </p>
+          </Reveal>
 
-      <Reveal>
-        <div className="krk-card p-7 mt-12 max-w-[680px]">
-          <h3 className="text-lg font-bold mb-2">
-            Your team, <span className="grad">one source of truth.</span>
-          </h3>
-          <p className="text-text-secondary leading-relaxed">
-            Put the Brain in a shared space and the whole team works from the same place.
-            One person owns it; the rest read and contribute. One brain scales with you.
-          </p>
+          <Reveal>
+            <div className="krk-card p-7 mt-12 max-w-[680px]">
+              <h3 className="text-lg font-bold mb-2">
+                Your team, <span className="grad">one source of truth.</span>
+              </h3>
+              <p className="text-text-secondary leading-relaxed">
+                Put the Brain in a shared space and the whole team works from the same place.
+                One person owns it; the rest read and contribute. One brain scales with you.
+              </p>
+            </div>
+          </Reveal>
         </div>
-      </Reveal>
+
+        <Reveal delay={150}>
+          <BrainDiagram />
+        </Reveal>
+      </div>
     </Section>
   );
 }

@@ -18,9 +18,9 @@ function Nav() {
           KUROKO<span className="text-accent-text">.</span>
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm text-text-secondary">
-          <Link href="/#how" className="hover:text-text-primary transition-colors">How it works</Link>
+          <Link href="/how-it-works" className="hover:text-text-primary transition-colors">How it works</Link>
           <Link href="/#start" className="hover:text-text-primary transition-colors">How you start</Link>
-          <Link href="/#name" className="hover:text-text-primary transition-colors">About</Link>
+          <Link href="/about" className="hover:text-text-primary transition-colors">About</Link>
         </nav>
         <a href={CHECK_URL} className="krk-btn krk-btn--primary krk-btn--sm ml-auto">
           Take the readiness check
@@ -38,7 +38,8 @@ function Footer() {
           KUROKO<span className="text-accent-text">.</span> — give AI a job, not a question.
         </span>
         <nav className="flex gap-5">
-          <Link href="/#how" className="hover:text-text-primary transition-colors">How it works</Link>
+          <Link href="/how-it-works" className="hover:text-text-primary transition-colors">How it works</Link>
+          <Link href="/about" className="hover:text-text-primary transition-colors">About</Link>
           <a href={CHECK_URL} className="hover:text-text-primary transition-colors">Readiness check</a>
         </nav>
         <span>© Kuroko {new Date().getFullYear()}</span>

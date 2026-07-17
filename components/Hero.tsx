@@ -110,7 +110,7 @@ const CAPTIONS = [
   { from: 0.0, to: 0.3, eyebrow: "AI THAT DOES THE WORK", line: "hero" },
   { from: 0.34, to: 0.62, eyebrow: "WE BUILD YOUR BUSINESS BRAIN", line: "One place that knows your business — your clients, your process, your numbers, your voice." },
   // Fades out before the dashboard settles into focus (teal crossfade runs 0.72–0.96).
-  { from: 0.68, to: 0.84, eyebrow: "KUROKO", line: "It does the work. You take the applause." },
+  { from: 0.68, to: 0.84, eyebrow: "THE WHOLE POINT", line: "It does the work. You take the applause." },
 ] as const;
 
 export function Hero({ checkUrl }: { checkUrl: string }) {

@@ -105,9 +105,9 @@ function HumanFirst() {
         </h2>
         <p className="text-lg text-text-secondary max-w-[640px] mx-auto leading-relaxed">
           You&apos;re not replacing your team — you&apos;re reinforcing it. Alongside your
-          people, an AI team that drafts, chases, files and reports around the clock, handing
-          every piece of work back for a human yes. Your people make the calls. The AI makes
-          them faster.
+          people, an AI team that drafts, chases, files and reports around the clock — and
+          nothing goes out until a human signs it off. Your people do the deciding. It does
+          the legwork.
         </p>
       </Reveal>
     </Section>

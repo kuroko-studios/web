@@ -78,8 +78,9 @@ function Brain() {
                 Your team, <span className="grad">one source of truth.</span>
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                Put the Brain in a shared space and the whole team works from the same place.
-                One person owns it; the rest read and contribute. One brain scales with you.
+                Everyone works from the same, always-current picture of the business — same
+                clients, same process, same voice. No knowledge trapped in one person&apos;s
+                head, nothing lost when someone leaves. One brain, growing with you.
               </p>
             </div>
           </Reveal>

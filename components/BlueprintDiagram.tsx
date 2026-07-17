@@ -4,8 +4,10 @@ import * as React from "react";
  * The Blueprint — an architect's drawing of the four-layer system.
  * Gridded sheet, corner register marks, the stack drawn as dashed
  * "to-build" outlines with numbered leader lines, and a title block.
- * Static, token-coloured SVG in the same family as BrainDiagram and
- * the Layers stack.
+ * Token-coloured SVG in the same family as BrainDiagram and the Layers
+ * stack. Stylised motion: the dashed outlines march (the plan being
+ * drawn), the stack breathes a teal glow, the leader dots pulse.
+ * All CSS-driven; disabled under prefers-reduced-motion.
  */
 
 const CX = 175; // stack centre x
@@ -31,6 +33,23 @@ export function BlueprintDiagram() {
       role="img"
       aria-label="The Blueprint: a technical drawing of the four layers — Brain, Connections, Workers, Window — mapped before anything is built."
     >
+      <style>{`
+        @keyframes bpDash { to { stroke-dashoffset: -18; } }
+        @keyframes bpGlow {
+          0%, 100% { filter: drop-shadow(0 0 3px rgba(45, 212, 191, 0.15)); }
+          50% { filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.5)); }
+        }
+        @keyframes bpDot {
+          0%, 100% { opacity: 0.45; }
+          50% { opacity: 1; }
+        }
+        .bp-dash { animation: bpDash 2.8s linear infinite; }
+        .bp-stack { animation: bpGlow 3.6s ease-in-out infinite; }
+        .bp-dot { animation: bpDot 2.4s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .bp-dash, .bp-stack, .bp-dot { animation: none; }
+        }
+      `}</style>
       <defs>
         <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
           <path
@@ -87,23 +106,26 @@ export function BlueprintDiagram() {
       </text>
 
       {/* The stack, drawn bottom-up so upper layers overlap correctly */}
-      {[...PLAN].reverse().map((layer, idx) => {
-        const y = YS[PLAN.length - 1 - idx];
-        return (
-          <path
-            key={layer.num}
-            d={diamond(y)}
-            fill={
-              layer.core
-                ? "color-mix(in srgb, var(--krk-accent-tint) 70%, transparent)"
-                : "color-mix(in srgb, var(--krk-surface-raised) 55%, transparent)"
-            }
-            stroke={layer.core ? "var(--krk-accent-default)" : "var(--krk-accent-text)"}
-            strokeWidth={layer.core ? 1.6 : 1.1}
-            strokeDasharray={layer.core ? undefined : "5 4"}
-          />
-        );
-      })}
+      <g className="bp-stack">
+        {[...PLAN].reverse().map((layer, idx) => {
+          const y = YS[PLAN.length - 1 - idx];
+          return (
+            <path
+              key={layer.num}
+              className={layer.core ? undefined : "bp-dash"}
+              d={diamond(y)}
+              fill={
+                layer.core
+                  ? "color-mix(in srgb, var(--krk-accent-tint) 70%, transparent)"
+                  : "color-mix(in srgb, var(--krk-surface-raised) 55%, transparent)"
+              }
+              stroke={layer.core ? "var(--krk-accent-default)" : "var(--krk-accent-text)"}
+              strokeWidth={layer.core ? 1.6 : 1.1}
+              strokeDasharray={layer.core ? undefined : "5 4"}
+            />
+          );
+        })}
+      </g>
 
       {/* Leader lines + labels */}
       {PLAN.map((layer, i) => {
@@ -118,7 +140,14 @@ export function BlueprintDiagram() {
               strokeWidth="1"
               opacity="0.7"
             />
-            <circle cx={tipX + 4} cy={y} r="1.8" fill="var(--krk-accent-tertiary-text)" />
+            <circle
+              className="bp-dot"
+              cx={tipX + 4}
+              cy={y}
+              r="2"
+              fill="var(--krk-accent-tertiary-text)"
+              style={{ animationDelay: `${i * 0.35}s` }}
+            />
             <text
               x={elbowX + 6}
               y={y - 2}

@@ -108,7 +108,7 @@ const smooth = (t: number) => t * t * (3 - 2 * t);
 /* Captions cross-faded across the scrub. */
 const CAPTIONS = [
   { from: 0.0, to: 0.3, eyebrow: "AI THAT DOES THE WORK", line: "hero" },
-  { from: 0.34, to: 0.62, eyebrow: "FIRST, WE BUILD THE BRAIN", line: "One place that knows your business — your clients, your process, your numbers, your voice." },
+  { from: 0.34, to: 0.62, eyebrow: "WE BUILD YOUR BUSINESS BRAIN", line: "One place that knows your business — your clients, your process, your numbers, your voice." },
   // Fades out before the dashboard settles into focus (teal crossfade runs 0.72–0.96).
   { from: 0.68, to: 0.84, eyebrow: "KUROKO", line: "It does the work. You take the applause." },
 ] as const;
@@ -307,14 +307,17 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
 
           {/* Phases 2–3 — big captions centred over the swirl. The final one
               fades out as the dashboard settles into focus. */}
-          {CAPTIONS.slice(1).map((c) => (
+          {CAPTIONS.slice(1).map((c, i) => (
             <div
               key={c.eyebrow}
               className="absolute inset-x-0 top-1/2 -translate-y-1/2 px-5 text-center transition-opacity duration-300"
               style={{ opacity: captionOpacity(c.from, c.to) }}
             >
               <p className="krk-section-label !text-sm sm:!text-base mb-4 !text-accent-tertiary-text">{c.eyebrow}</p>
-              <p className="text-3xl sm:text-5xl font-bold tracking-tight max-w-[820px] mx-auto leading-[1.12]">
+              {/* The long Brain caption sits a size down; the short finale keeps the full headline size. */}
+              <p
+                className={`${i === 0 ? "text-2xl sm:text-4xl max-w-[720px]" : "text-3xl sm:text-5xl max-w-[820px]"} font-bold tracking-tight mx-auto leading-[1.12]`}
+              >
                 {c.line}
               </p>
             </div>

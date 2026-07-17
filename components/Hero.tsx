@@ -109,7 +109,8 @@ const smooth = (t: number) => t * t * (3 - 2 * t);
 const CAPTIONS = [
   { from: 0.0, to: 0.3, eyebrow: "AI THAT DOES THE WORK", line: "hero" },
   { from: 0.34, to: 0.62, eyebrow: "WHILE YOU SCROLL", line: "It builds itself around your business." },
-  { from: 0.68, to: 1.01, eyebrow: "THE RESULT", line: "Your whole business, in one quiet view." },
+  // Fades out before the dashboard settles into focus (teal crossfade runs 0.72–0.96).
+  { from: 0.68, to: 0.84, eyebrow: "THE RESULT", line: "Your whole business, in one quiet view." },
 ] as const;
 
 export function Hero({ checkUrl }: { checkUrl: string }) {
@@ -303,25 +304,20 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
             </p>
           </div>
 
-          {/* Phase 2 — big caption centred over the swirling particles */}
-          <div
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2 px-5 text-center transition-opacity duration-300"
-            style={{ opacity: captionOpacity(CAPTIONS[1].from, CAPTIONS[1].to) }}
-          >
-            <p className="krk-section-label mb-4 !text-accent-tertiary-text">{CAPTIONS[1].eyebrow}</p>
-            <p className="text-3xl sm:text-5xl font-bold tracking-tight max-w-[820px] mx-auto leading-[1.12]">
-              {CAPTIONS[1].line}
-            </p>
-          </div>
-
-          {/* Phase 3 — drops to the bottom so the finished dashboard stays clear */}
-          <div
-            className="absolute inset-x-0 bottom-10 px-5 text-center transition-opacity duration-300"
-            style={{ opacity: captionOpacity(CAPTIONS[2].from, CAPTIONS[2].to) }}
-          >
-            <p className="krk-section-label mb-2 !text-accent-tertiary-text">{CAPTIONS[2].eyebrow}</p>
-            <p className="text-2xl sm:text-3xl font-bold tracking-tight">{CAPTIONS[2].line}</p>
-          </div>
+          {/* Phases 2–3 — big captions centred over the swirl. The final one
+              fades out as the dashboard settles into focus. */}
+          {CAPTIONS.slice(1).map((c) => (
+            <div
+              key={c.eyebrow}
+              className="absolute inset-x-0 top-1/2 -translate-y-1/2 px-5 text-center transition-opacity duration-300"
+              style={{ opacity: captionOpacity(c.from, c.to) }}
+            >
+              <p className="krk-section-label !text-sm sm:!text-base mb-4 !text-accent-tertiary-text">{c.eyebrow}</p>
+              <p className="text-3xl sm:text-5xl font-bold tracking-tight max-w-[820px] mx-auto leading-[1.12]">
+                {c.line}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Scroll hint */}

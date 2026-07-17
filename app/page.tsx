@@ -31,10 +31,14 @@ function TwoWorlds() {
   return (
     <Section id="two-worlds">
       <Reveal>
-        <Eyebrow>THE WHOLE THING, ONE IDEA</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-12">
-          There are two worlds of AI.
+        <Eyebrow>SOUND FAMILIAR?</Eyebrow>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          You&apos;re using AI like a search engine.
         </h2>
+        <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed mb-12">
+          You ask, it answers, you still do the work. That&apos;s Level 1 — and it&apos;s
+          where almost everyone is stuck.
+        </p>
       </Reveal>
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14 items-stretch">
@@ -52,9 +56,8 @@ function TwoWorlds() {
               </p>
             </div>
             <p className="text-text-secondary mt-5">
-              You ask, it answers. Then you still do the work.
+              Helpful. But every bit of the work is still yours.
             </p>
-            <p className="text-text-muted text-sm mt-2">Where almost everyone is stuck.</p>
           </div>
         </Reveal>
 
@@ -90,8 +93,17 @@ function TwoWorlds() {
       </div>
 
       <Reveal>
-        <p className="text-center text-xl sm:text-2xl font-bold mt-14">
-          Ask <span className="grad">→</span> Do. That&apos;s the only jump that matters today.
+        <p className="text-text-secondary text-center max-w-[680px] mx-auto mt-12 leading-relaxed">
+          Tried to automate things yourself? Bolted a few tools together, it broke, nobody
+          had time to fix it? That&apos;s not a you problem — making this stick is a
+          full-time job. <strong className="text-text-primary">It&apos;s ours.</strong>
+        </p>
+      </Reveal>
+
+      <Reveal>
+        <p className="text-center text-xl sm:text-2xl font-bold mt-10">
+          You don&apos;t need better answers.{" "}
+          <span className="grad">You need the work done.</span>
         </p>
       </Reveal>
     </Section>

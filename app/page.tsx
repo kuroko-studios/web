@@ -2,6 +2,7 @@ import { BrainDiagram } from "@/components/BrainDiagram";
 import { Hero } from "@/components/Hero";
 import { Layers } from "@/components/Layers";
 import { Reveal } from "@/components/Reveal";
+import { TwoWorlds } from "@/components/TwoWorlds";
 
 const CHECK_URL = "/check";
 
@@ -26,74 +27,14 @@ function Section({
   );
 }
 
-/* ------------------------------------------------ two worlds of AI */
-function TwoWorlds() {
+/* ------------------------------------------------ two worlds of AI
+   The pinned scroll-scrub stage lives in components/TwoWorlds.tsx; the
+   dabbler strip + closing line flow after it as a normal section. */
+function TwoWorldsOutro() {
   return (
-    <Section id="two-worlds">
+    <Section className="!pt-0">
       <Reveal>
-        <Eyebrow>SOUND FAMILIAR?</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-          You&apos;re using AI like a search engine.
-        </h2>
-        <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed mb-12">
-          You ask, it answers, you still do the work. That&apos;s Level 1 — and it&apos;s
-          where almost everyone is stuck.
-        </p>
-      </Reveal>
-
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14 items-stretch">
-        {/* You ask */}
-        <Reveal>
-          <div className="krk-card p-7 h-full !bg-surface-base">
-            <p className="krk-section-label mb-4">LEVEL 1 · YOU ASK</p>
-            <h3 className="text-2xl font-bold mb-5">You ask.</h3>
-            <div className="rounded-lg border border-line bg-surface-page p-4 text-sm space-y-3">
-              <p className="text-text-secondary">
-                <span className="text-text-muted">You:</span> “How do I get more leads?”
-              </p>
-              <p className="text-text-primary bg-surface-raised rounded-md px-3 py-2">
-                Here are 10 ideas to try…
-              </p>
-            </div>
-            <p className="text-text-secondary mt-5">
-              Helpful. But every bit of the work is still yours.
-            </p>
-          </div>
-        </Reveal>
-
-        {/* THE JUMP — appears between the two worlds */}
-        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <Reveal delay={350}>
-            <span
-              className="krk-badge krk-badge--accent !text-sm !px-5 !py-3 font-bold tracking-widest"
-              style={{ boxShadow: "var(--krk-glow-accent)" }}
-            >
-              THE JUMP →
-            </span>
-          </Reveal>
-        </div>
-
-        {/* AI does — fades in after "You ask", glow ramping up last */}
-        <Reveal delay={600}>
-          <div className="krk-card p-7 h-full border-[color:var(--krk-accent-default)] glow-in">
-            <p className="krk-section-label !text-accent-text mb-4">LEVEL 2 · AI DOES</p>
-            <h3 className="text-2xl font-bold mb-5">AI does.</h3>
-            <div className="rounded-lg border border-line bg-surface-page p-4 text-sm font-mono space-y-2">
-              <p className="text-accent-text">you: start my week</p>
-              <p className="text-text-primary">✓ Drafted the quote for the Harrison job</p>
-              <p className="text-text-primary">✓ Chased two unpaid invoices</p>
-              <p className="text-text-primary">✓ Replied to yesterday&apos;s enquiry, in your voice</p>
-              <p className="text-text-primary">✓ Put the site visit in your calendar</p>
-            </div>
-            <p className="text-text-secondary mt-5">
-              One instruction. Four jobs done — waiting for your sign-off.
-            </p>
-          </div>
-        </Reveal>
-      </div>
-
-      <Reveal>
-        <p className="text-text-secondary text-center max-w-[680px] mx-auto mt-12 leading-relaxed">
+        <p className="text-text-secondary text-center max-w-[680px] mx-auto leading-relaxed">
           Tried to automate things yourself? Bolted a few tools together, it broke, nobody
           had time to fix it? That&apos;s not a you problem — making this stick is a
           full-time job. <strong className="text-text-primary">It&apos;s ours.</strong>
@@ -405,6 +346,7 @@ export default function HomePage() {
     <main>
       <Hero checkUrl={CHECK_URL} />
       <TwoWorlds />
+      <TwoWorldsOutro />
       <Brain />
       <HumanFirst />
       <Modules />

@@ -136,52 +136,11 @@ function Modules() {
   );
 }
 
-/* ------------------------------------------------ plain english */
-const JARGON = [
-  ["“Agent”", "a worker you hand one job to."],
-  ["“Automation”", "things that happen in the background, without anyone asking."],
-  ["“Integration” / “connector”", "a plug into a tool you already use."],
-  ["“Context”", "everything your AI knows about how your business runs. (That's the Brain.)"],
-  ["“Prompt”", "the instruction you give it — better thought of as the job you hand over."],
-  ["“The model”", "the raw intelligence under the hood. We pick it; you never think about it."],
-];
-
-function PlainEnglish() {
-  return (
-    <Section>
-      <Reveal>
-        <Eyebrow>NO JARGON</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-10">
-          The words people throw around, translated.
-        </h2>
-      </Reveal>
-      <div className="krk-card divide-y divide-[color:var(--krk-line-default)]">
-        {JARGON.map(([word, meaning], i) => (
-          <Reveal key={word} delay={i * 50}>
-            <div className="grid grid-cols-1 sm:grid-cols-[260px_1fr] gap-1 sm:gap-6 px-6 py-4">
-              <span className="text-text-muted">{word}</span>
-              <span className="text-text-primary">
-                <span className="text-accent-text mr-2">→</span>
-                {meaning}
-              </span>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      <Reveal>
-        <p className="text-text-secondary mt-6 text-center italic">
-          If we ever use a word you&apos;d have to Google, we&apos;ve failed.
-        </p>
-      </Reveal>
-    </Section>
-  );
-}
-
 /* ------------------------------------------------ three questions */
 const QUESTIONS = [
-  ["Who needs to touch this?", "Just the operators, or the whole team?"],
-  ["Doing problem or seeing problem?", "Drowning in the work, or can't see clearly across it?"],
-  ["On-demand or always-on?", "Help when you ask, or things happening in the background?"],
+  ["Who needs to touch this?", "Just you and one or two others, or the whole team? That decides how we set up the Brain."],
+  ["Doing problem or seeing problem?", "Drowning in the work, or can't see clearly across it? One points to the Workers, the other to the Window."],
+  ["On-demand or always-on?", "Help when you ask for it, or jobs that run on their own, around the clock?"],
 ];
 
 function Questions() {
@@ -193,8 +152,8 @@ function Questions() {
           Every setup comes down to three honest questions.
         </h2>
         <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed mb-12">
-          We don&apos;t arrive with a product to sell you. Your answers decide which parts we
-          switch on, and in what order.
+          We don&apos;t arrive with a product to sell you. Your answers decide which of the
+          four layers we switch on — and in what order.
         </p>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -350,7 +309,6 @@ export default function HomePage() {
       <Brain />
       <HumanFirst />
       <Modules />
-      <PlainEnglish />
       <Questions />
       <Start />
       <Promises />

@@ -45,9 +45,9 @@ const LAYERS = [
 ];
 
 const QUESTIONS = [
-  ["Who needs to touch this?", "Just the operators, or the whole team?"],
-  ["Doing problem or seeing problem?", "Drowning in the work, or can't see clearly across it?"],
-  ["On-demand or always-on?", "Help when you ask, or things happening in the background?"],
+  ["Who needs to touch this?", "Just you and one or two others, or the whole team? That decides how we set up the Brain."],
+  ["Doing problem or seeing problem?", "Drowning in the work, or can't see clearly across it? One points to the Workers, the other to the Window."],
+  ["On-demand or always-on?", "Help when you ask for it, or jobs that run on their own, around the clock?"],
 ];
 
 export default function HowItWorksPage() {

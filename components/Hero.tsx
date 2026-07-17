@@ -108,9 +108,9 @@ const smooth = (t: number) => t * t * (3 - 2 * t);
 /* Captions cross-faded across the scrub. */
 const CAPTIONS = [
   { from: 0.0, to: 0.3, eyebrow: "AI THAT DOES THE WORK", line: "hero" },
-  { from: 0.34, to: 0.62, eyebrow: "WHILE YOU SCROLL", line: "It builds itself around your business." },
+  { from: 0.34, to: 0.62, eyebrow: "FIRST, WE BUILD THE BRAIN", line: "One place that knows your business — your clients, your process, your numbers, your voice." },
   // Fades out before the dashboard settles into focus (teal crossfade runs 0.72–0.96).
-  { from: 0.68, to: 0.84, eyebrow: "THE RESULT", line: "Your whole business, in one quiet view." },
+  { from: 0.68, to: 0.84, eyebrow: "KUROKO", line: "It does the work. You take the applause." },
 ] as const;
 
 export function Hero({ checkUrl }: { checkUrl: string }) {
@@ -287,9 +287,10 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
               not a question.
             </h1>
             <p className="text-lg text-text-secondary max-w-[560px] mx-auto mt-6 leading-relaxed">
-              Most businesses are still asking AI for answers — then doing the
-              work themselves. Kuroko builds the quiet system that does the work
-              for you. You give it a job. It hands the result back for your yes.
+              Most businesses are still asking AI questions — then doing the
+              work themselves. Kuroko builds you an AI team that actually does
+              it: drafts the quotes, chases the invoices, answers the enquiries,
+              files the paperwork. Nothing goes out without your sign-off.
             </p>
             <div className="flex items-center justify-center gap-3 mt-8 pointer-events-auto">
               <a href={checkUrl} className="krk-btn krk-btn--primary">

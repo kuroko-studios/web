@@ -83,7 +83,7 @@ function TwoWorlds() {
               <p className="text-text-primary">✓ Put the site visit in your calendar</p>
             </div>
             <p className="text-text-secondary mt-5">
-              One instruction. Four jobs done, handed back for your yes.
+              One instruction. Four jobs done — waiting for your sign-off.
             </p>
           </div>
         </Reveal>

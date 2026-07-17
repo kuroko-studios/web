@@ -30,7 +30,7 @@ const LAYERS = [
     num: "03",
     name: "The Workers",
     core: false,
-    body: "Jobs handed over and done properly: draft the quote, chase the invoice, answer the enquiry, prep the meeting. Each worker does one job, does it your way, and hands the result back for your yes. Nothing goes out without a human decision.",
+    body: "Jobs handed over and done properly: draft the quote, chase the invoice, answer the enquiry, prep the meeting. Each worker does one job, does it your way, and hands the result back for your sign-off. Nothing goes out without a human decision.",
     practice:
       "“Chase the unpaid invoices” — polite reminders drafted for everyone overdue, waiting for your approval.",
   },

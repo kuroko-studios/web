@@ -19,7 +19,7 @@ function Nav() {
         </Link>
         <nav className="hidden sm:flex items-center gap-6 text-sm text-text-secondary">
           <Link href="/how-it-works" className="hover:text-text-primary transition-colors">How it works</Link>
-          <Link href="/#start" className="hover:text-text-primary transition-colors">How you start</Link>
+          <Link href="/#start" className="hover:text-text-primary transition-colors">Getting started</Link>
           <Link href="/about" className="hover:text-text-primary transition-colors">About</Link>
         </nav>
         <a href={CHECK_URL} className="krk-btn krk-btn--primary krk-btn--sm ml-auto">

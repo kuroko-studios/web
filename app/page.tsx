@@ -175,27 +175,28 @@ function Questions() {
   );
 }
 
-/* ------------------------------------------------ how you start */
+/* ------------------------------------------------ getting started */
 const TIERS = [
-  ["Tier 1 · Foundations", "Stand up the Brain and train your team to use it well."],
-  ["Tier 2 · Connected", "Plug your tools together and switch on your first automations."],
-  ["Tier 3 · Workforce", "Put the Workers to work, around the clock."],
-  ["Retainer", "We keep it running and improving."],
+  ["Tier 1 · Foundations", "The Brain goes in, and your team learns to work with it."],
+  ["Tier 2 · Connected", "Your tools plug in, and the first jobs start running on their own."],
+  ["Tier 3 · Workforce", "The Workers take on the routine work, around the clock."],
+  ["Retainer", "We stay on — keeping it running, making it better."],
 ];
 
 function Start() {
   return (
     <Section id="start">
       <Reveal>
-        <Eyebrow>HOW YOU START</Eyebrow>
+        <Eyebrow>THE WAY IN</Eyebrow>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-          It begins with the Blueprint.
+          First, we map it. Then we build it.
         </h2>
         <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
-          Every engagement opens with the <strong className="text-text-primary">AI Blueprint</strong>{" "}
-          — a paid diagnostic that maps where AI genuinely helps your business, what to tackle
-          first, and what to leave alone. Honest work, not a sales pitch.{" "}
-          <strong className="text-text-primary">The fee is credited when you go ahead.</strong>
+          Before anything gets built, the <strong className="text-text-primary">Blueprint</strong>:
+          we map your business and show you exactly where AI genuinely helps — what to tackle
+          first, and what to leave alone. Paid work, honestly done — not a sales pitch in
+          disguise. <strong className="text-text-primary">And the fee comes off your first
+          build.</strong>
         </p>
       </Reveal>
 
@@ -213,12 +214,14 @@ function Start() {
 
       <Reveal>
         <p className="text-text-secondary mt-8 max-w-[680px]">
-          Two scoped add-ons sit outside the tiers when you need them:{" "}
-          <strong className="text-text-primary">the Window</strong> (a built software layer) and{" "}
-          <strong className="text-text-primary">the Brand System</strong> (a machine-readable
-          design system).
+          Need more? Two extras slot in whenever you&apos;re ready:{" "}
+          <strong className="text-text-primary">the Window</strong> — your live view of the
+          whole business — and <strong className="text-text-primary">the Brand System</strong>,
+          your look and voice packaged so AI gets them right every time.
         </p>
-        <p className="text-xl font-bold mt-8">Nobody gets told no. They get a sequence.</p>
+        <p className="text-xl font-bold mt-8">
+          No big bang, no leap of faith. One step, proved, then the next.
+        </p>
       </Reveal>
     </Section>
   );

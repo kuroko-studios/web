@@ -114,7 +114,7 @@ function HumanFirst() {
   );
 }
 
-/* ------------------------------------------------ the six layers */
+/* ------------------------------------------------ the four layers */
 function Modules() {
   return (
     <section>
@@ -220,7 +220,7 @@ function Questions() {
 const TIERS = [
   ["Tier 1 · Foundations", "Stand up the Brain and train your team to use it well."],
   ["Tier 2 · Connected", "Plug your tools together and switch on your first automations."],
-  ["Tier 3 · Workforce", "Put the Workers and the Engine to work."],
+  ["Tier 3 · Workforce", "Put the Workers to work, around the clock."],
   ["Retainer", "We keep it running and improving."],
 ];
 

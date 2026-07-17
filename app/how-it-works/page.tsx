@@ -6,7 +6,7 @@ import { Eyebrow, Section, PageHeader, CtaBlock } from "@/components/Blocks";
 export const metadata: Metadata = {
   title: "How it works — Kuroko",
   description:
-    "One quiet system, built in layers: the Brain, the Connections, the Workers, the Engine, the Window, the Interfaces. Switched on only as you need them.",
+    "One quiet system, built in layers: the Brain, the Connections, the Workers, the Window. Switched on only as you need them.",
 };
 
 const LAYERS = [
@@ -30,33 +30,17 @@ const LAYERS = [
     num: "03",
     name: "The Workers",
     core: false,
-    body: "Jobs handed over and done properly: draft the quote, chase the invoice, answer the enquiry, prep the meeting. Each worker does one job, does it your way, and hands the result back for your sign-off. Nothing goes out without a human decision.",
+    body: "Jobs handed over and done properly: draft the quote, chase the invoice, answer the enquiry, prep the meeting. Each worker does one job, does it your way, and hands the result back for your sign-off. They run on their own, on a schedule — the Monday brief, the Friday report, the watcher that flags what nobody spotted — whether you're at your desk or not. Nothing goes out without a human decision.",
     practice:
-      "“Chase the unpaid invoices” — polite reminders drafted for everyone overdue, waiting for your approval.",
+      "Every morning at 7:30 the day's brief is waiting — and polite reminders are drafted for everyone overdue, ready for your approval. Nobody pressed anything.",
   },
   {
     num: "04",
-    name: "The Engine",
-    core: false,
-    body: "The always-on layer. Schedules and triggers that run the workers without being asked: the Monday brief, the Friday report, the watcher that flags the thing nobody spotted. It runs whether you're at your desk or not.",
-    practice:
-      "Every morning at 7:30, the day's brief is waiting. Nobody pressed anything.",
-  },
-  {
-    num: "05",
     name: "The Window",
     core: false,
-    body: "When you need to see the whole business in one place: a built software layer over the Brain. Pipeline, jobs, numbers — live, in one view, shaped around how you actually run things.",
+    body: "See the whole business in one place: a built software layer over the Brain. Pipeline, jobs, numbers — live, in one view, shaped around how you actually run things. And no new habits: the work lands where your team already lives — email, chat, shared documents. The system fits your team; your team doesn't bend around it.",
     practice:
-      "One screen: which quotes are out, what's unpaid, what's booked this week.",
-  },
-  {
-    num: "06",
-    name: "The Interfaces",
-    core: false,
-    body: "No new habits. The work lands where your team already lives — email, chat, shared documents. The system fits your team; your team doesn't bend around the system.",
-    practice:
-      "The report arrives in the same inbox and chat your team checks every day.",
+      "One screen: which quotes are out, what's unpaid, what's booked this week — and the report still arrives in the inbox your team checks every day.",
   },
 ];
 
@@ -75,7 +59,7 @@ export default function HowItWorksPage() {
             Everything starts with a <strong className="text-text-primary">Brain</strong> that
             holds how your business works, and{" "}
             <strong className="text-text-primary">Connections</strong> into the tools you
-            already use. On top of that core, four more layers switch on as you need them —
+            already use. On top of that core, two more layers switch on as you need them —
             never before, never for the sake of it.
           </p>
         </PageHeader>

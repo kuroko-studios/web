@@ -3,25 +3,24 @@ import * as React from "react";
 
 /*
  * Scroll-scrubbed layer build.
- * The six-module architecture assembles as an isometric stack while the
+ * The four-layer architecture assembles as an isometric stack while the
  * visitor scrolls: the Brain lands first (the foundation), then each layer
  * floats in and settles on top. The module list alongside lights up as its
- * layer lands. Pure CSS transforms driven by scroll — no video, no canvas.
- * Respects prefers-reduced-motion (renders the finished stack).
+ * layer lands, and in the finale the top layer reveals a dashboard face —
+ * the built platform. Pure CSS transforms driven by scroll — no video, no
+ * canvas. Respects prefers-reduced-motion (renders the finished stack).
  */
 
 const LAYERS = [
   { name: "The Brain", core: true, desc: "The single place that holds how your business works — knowledge, tone, process, numbers — so AI acts with real context." },
   { name: "The Connections", core: true, desc: "Plugs into the tools you already use, so the data scattered across them flows into one place." },
-  { name: "The Workers", core: false, desc: "AI given specific jobs: drafting the quote, chasing the invoice, answering the enquiry." },
-  { name: "The Engine", core: false, desc: "The always-on layer that runs those jobs in the background, without being asked." },
-  { name: "The Window", core: false, desc: "A built software layer: one clear, consolidated view of the whole business." },
-  { name: "The Interfaces", core: false, desc: "How your team actually uses it, inside the tools they already work in." },
+  { name: "The Workers", core: false, desc: "AI given specific jobs — drafting the quote, chasing the invoice, answering the enquiry — running on their own, around the clock." },
+  { name: "The Window", core: false, desc: "One clear view of the whole business, on the screens your team already works in." },
 ];
 
-const STEP = 0.115; // scrub window per layer
-const DUR = 0.18;
-const FINALE_FROM = 0.8; // last stretch: the layers become one glowing system
+const STEP = 0.17; // scrub window per layer
+const DUR = 0.2;
+const FINALE_FROM = 0.78; // last stretch: the layers become one glowing system
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const layerT = (p: number, i: number) =>
   smooth(Math.min(1, Math.max(0, (p - i * STEP) / DUR)));
@@ -57,7 +56,7 @@ export function Layers() {
   const glowRgb = `${mix(139, 45)},${mix(92, 212)},${mix(246, 191)}`; // violet → teal
 
   return (
-    <div ref={sectionRef} className="relative h-[360vh]">
+    <div ref={sectionRef} className="relative h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden flex items-center">
         <div className="max-w-[1100px] mx-auto px-5 w-full grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 items-center">
           {/* The stack */}
@@ -107,7 +106,43 @@ export function Layers() {
                         : "repeating-linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, var(--krk-line-default) 55%, transparent) 46px 47px)",
                     transition: "border-color 200ms",
                   }}
-                />
+                >
+                  {/* Finale: the top layer reveals a dashboard face — the built platform */}
+                  {i === LAYERS.length - 1 && (
+                    <svg
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                      className="absolute inset-0 w-full h-full p-3"
+                      style={{ opacity: ft }}
+                    >
+                      {/* header bar + traffic dots */}
+                      <rect x="4" y="4" width="92" height="10" rx="2" fill="rgba(45,212,191,0.10)" stroke="rgba(45,212,191,0.55)" strokeWidth="0.6" />
+                      <circle cx="9" cy="9" r="1.6" fill="rgba(45,212,191,0.9)" />
+                      <circle cx="14" cy="9" r="1.6" fill="rgba(45,212,191,0.55)" />
+                      <circle cx="19" cy="9" r="1.6" fill="rgba(45,212,191,0.35)" />
+                      {/* sidebar */}
+                      <rect x="4" y="18" width="20" height="78" rx="2" fill="rgba(45,212,191,0.07)" stroke="rgba(45,212,191,0.35)" strokeWidth="0.5" />
+                      <rect x="7" y="23" width="14" height="2.5" rx="1" fill="rgba(45,212,191,0.5)" />
+                      <rect x="7" y="30" width="14" height="2.5" rx="1" fill="rgba(45,212,191,0.35)" />
+                      <rect x="7" y="37" width="14" height="2.5" rx="1" fill="rgba(45,212,191,0.35)" />
+                      {/* rising graph */}
+                      <rect x="28" y="18" width="68" height="46" rx="2" fill="rgba(45,212,191,0.05)" stroke="rgba(45,212,191,0.35)" strokeWidth="0.5" />
+                      <polyline
+                        points="32,56 42,50 52,52 62,42 72,36 82,30 92,24"
+                        fill="none"
+                        stroke="rgba(45,212,191,0.9)"
+                        strokeWidth="1.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <circle cx="92" cy="24" r="2" fill="rgba(45,212,191,1)" />
+                      {/* stat tiles */}
+                      <rect x="28" y="68" width="20" height="28" rx="2" fill="rgba(45,212,191,0.08)" stroke="rgba(45,212,191,0.35)" strokeWidth="0.5" />
+                      <rect x="52" y="68" width="20" height="28" rx="2" fill="rgba(45,212,191,0.08)" stroke="rgba(45,212,191,0.35)" strokeWidth="0.5" />
+                      <rect x="76" y="68" width="20" height="28" rx="2" fill="rgba(45,212,191,0.08)" stroke="rgba(45,212,191,0.35)" strokeWidth="0.5" />
+                    </svg>
+                  )}
+                </div>
               );
             })}
             {/* Finale caption: the layers read as one system */}
@@ -115,7 +150,7 @@ export function Layers() {
               className="absolute left-1/2 -translate-x-1/2 bottom-2 text-center font-bold text-lg whitespace-nowrap"
               style={{ opacity: ft }}
             >
-              Six layers. <span className="text-accent-tertiary-text">One system.</span>
+              Four layers. <span className="text-accent-tertiary-text">One system.</span>
             </p>
           </div>
 

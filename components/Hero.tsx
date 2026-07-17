@@ -303,17 +303,25 @@ export function Hero({ checkUrl }: { checkUrl: string }) {
             </p>
           </div>
 
-          {/* Phases 2–3 — captions while the dashboard assembles */}
-          {CAPTIONS.slice(1).map((c) => (
-            <div
-              key={c.eyebrow}
-              className="absolute inset-x-0 bottom-16 px-5 text-center transition-opacity duration-300"
-              style={{ opacity: captionOpacity(c.from, c.to) }}
-            >
-              <p className="krk-section-label mb-2 !text-accent-tertiary-text">{c.eyebrow}</p>
-              <p className="text-xl sm:text-2xl font-semibold">{c.line}</p>
-            </div>
-          ))}
+          {/* Phase 2 — big caption centred over the swirling particles */}
+          <div
+            className="absolute inset-x-0 top-1/2 -translate-y-1/2 px-5 text-center transition-opacity duration-300"
+            style={{ opacity: captionOpacity(CAPTIONS[1].from, CAPTIONS[1].to) }}
+          >
+            <p className="krk-section-label mb-4 !text-accent-tertiary-text">{CAPTIONS[1].eyebrow}</p>
+            <p className="text-3xl sm:text-5xl font-bold tracking-tight max-w-[820px] mx-auto leading-[1.12]">
+              {CAPTIONS[1].line}
+            </p>
+          </div>
+
+          {/* Phase 3 — drops to the bottom so the finished dashboard stays clear */}
+          <div
+            className="absolute inset-x-0 bottom-10 px-5 text-center transition-opacity duration-300"
+            style={{ opacity: captionOpacity(CAPTIONS[2].from, CAPTIONS[2].to) }}
+          >
+            <p className="krk-section-label mb-2 !text-accent-tertiary-text">{CAPTIONS[2].eyebrow}</p>
+            <p className="text-2xl sm:text-3xl font-bold tracking-tight">{CAPTIONS[2].line}</p>
+          </div>
         </div>
 
         {/* Scroll hint */}

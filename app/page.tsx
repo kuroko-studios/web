@@ -1,3 +1,4 @@
+import { BlueprintDiagram } from "@/components/BlueprintDiagram";
 import { BrainDiagram } from "@/components/BrainDiagram";
 import { Hero } from "@/components/Hero";
 import { Layers } from "@/components/Layers";
@@ -186,19 +187,24 @@ const TIERS = [
 function Start() {
   return (
     <Section id="start">
-      <Reveal>
-        <Eyebrow>THE WAY IN</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-          First, we map it. Then we build it.
-        </h2>
-        <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
-          Before anything gets built, the <strong className="text-text-primary">Blueprint</strong>:
-          we map your business and show you exactly where AI genuinely helps — what to tackle
-          first, and what to leave alone. Paid work, honestly done — not a sales pitch in
-          disguise. <strong className="text-text-primary">And the fee comes off your first
-          build.</strong>
-        </p>
-      </Reveal>
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-center">
+        <Reveal>
+          <Eyebrow>THE WAY IN</Eyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+            First, we map it. Then we build it.
+          </h2>
+          <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
+            Before anything gets built, the <strong className="text-text-primary">Blueprint</strong>:
+            we map your business and show you exactly where AI genuinely helps — what to tackle
+            first, and what to leave alone. Paid work, honestly done — not a sales pitch in
+            disguise. <strong className="text-text-primary">And the fee comes off your first
+            build.</strong>
+          </p>
+        </Reveal>
+        <Reveal delay={150}>
+          <BlueprintDiagram />
+        </Reveal>
+      </div>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
         {TIERS.map(([name, desc], i) => (
@@ -214,7 +220,7 @@ function Start() {
 
       <Reveal>
         <p className="text-text-secondary mt-8 max-w-[680px]">
-          Need more? Two extras slot in whenever you&apos;re ready:{" "}
+          And when you&apos;re ready for them, two add-ons:{" "}
           <strong className="text-text-primary">the Window</strong> — your live view of the
           whole business — and <strong className="text-text-primary">the Brand System</strong>,
           your look and voice packaged so AI gets them right every time.

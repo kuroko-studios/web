@@ -12,8 +12,8 @@ import * as React from "react";
 
 const CX = 175; // stack centre x
 const W = 210; // diamond width
-const H = 104; // diamond height
-const YS = [122, 184, 246, 308]; // top → bottom layer centres
+const H = 96; // diamond height
+const YS = [152, 206, 260, 314]; // top → bottom layer centres (clear of the heading)
 
 const PLAN = [
   { num: "04", label: "THE WINDOW" },
@@ -36,18 +36,34 @@ export function BlueprintDiagram() {
       <style>{`
         @keyframes bpDash { to { stroke-dashoffset: -18; } }
         @keyframes bpGlow {
-          0%, 100% { filter: drop-shadow(0 0 3px rgba(45, 212, 191, 0.15)); }
-          50% { filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.5)); }
+          0%, 100% { filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.3)); }
+          50% { filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.75)); }
         }
         @keyframes bpDot {
           0%, 100% { opacity: 0.45; }
           50% { opacity: 1; }
         }
+        @keyframes bpHalo {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.65; }
+        }
+        @keyframes bpIn {
+          from { opacity: 0; transform: translateY(-18px); }
+          to { opacity: 1; transform: none; }
+        }
         .bp-dash { animation: bpDash 2.8s linear infinite; }
         .bp-stack { animation: bpGlow 3.6s ease-in-out infinite; }
         .bp-dot { animation: bpDot 2.4s ease-in-out infinite; }
+        .bp-halo { animation: bpHalo 3.6s ease-in-out infinite; }
+        /* Build-in: hidden until the surrounding Reveal fires, then each
+           piece lands in build order (Brain first) via animation-delay. */
+        .bp-in { opacity: 0; }
+        .reveal.is-visible .bp-in {
+          animation: bpIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
         @media (prefers-reduced-motion: reduce) {
-          .bp-dash, .bp-stack, .bp-dot { animation: none; }
+          .bp-dash, .bp-stack, .bp-dot, .bp-halo { animation: none; }
+          .bp-in { opacity: 1; animation: none !important; }
         }
       `}</style>
       <defs>
@@ -60,6 +76,11 @@ export function BlueprintDiagram() {
             opacity="0.4"
           />
         </pattern>
+        <radialGradient id="bpHaloGrad">
+          <stop offset="0%" stopColor="var(--krk-accent-tertiary)" stopOpacity="0.5" />
+          <stop offset="60%" stopColor="var(--krk-accent-tertiary)" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="var(--krk-accent-tertiary)" stopOpacity="0" />
+        </radialGradient>
       </defs>
 
       {/* The sheet */}
@@ -105,24 +126,36 @@ export function BlueprintDiagram() {
         DRG № 001 · MAPPED BEFORE BUILT
       </text>
 
-      {/* The stack, drawn bottom-up so upper layers overlap correctly */}
+      {/* Teal glow pool behind the stack */}
+      <ellipse
+        className="bp-halo"
+        cx={CX}
+        cy={(YS[0] + YS[3]) / 2 + 14}
+        rx="150"
+        ry="120"
+        fill="url(#bpHaloGrad)"
+      />
+
+      {/* The stack, drawn bottom-up so upper layers overlap correctly;
+          each layer builds in Brain-first via staggered delays. */}
       <g className="bp-stack">
         {[...PLAN].reverse().map((layer, idx) => {
           const y = YS[PLAN.length - 1 - idx];
           return (
-            <path
-              key={layer.num}
-              className={layer.core ? undefined : "bp-dash"}
-              d={diamond(y)}
-              fill={
-                layer.core
-                  ? "color-mix(in srgb, var(--krk-accent-tint) 70%, transparent)"
-                  : "color-mix(in srgb, var(--krk-surface-raised) 55%, transparent)"
-              }
-              stroke={layer.core ? "var(--krk-accent-default)" : "var(--krk-accent-text)"}
-              strokeWidth={layer.core ? 1.6 : 1.1}
-              strokeDasharray={layer.core ? undefined : "5 4"}
-            />
+            <g key={layer.num} className="bp-in" style={{ animationDelay: `${idx * 0.22}s` }}>
+              <path
+                className={layer.core ? undefined : "bp-dash"}
+                d={diamond(y)}
+                fill={
+                  layer.core
+                    ? "color-mix(in srgb, var(--krk-accent-tint) 70%, transparent)"
+                    : "color-mix(in srgb, var(--krk-surface-raised) 55%, transparent)"
+                }
+                stroke={layer.core ? "var(--krk-accent-default)" : "var(--krk-accent-text)"}
+                strokeWidth={layer.core ? 1.6 : 1.1}
+                strokeDasharray={layer.core ? undefined : "5 4"}
+              />
+            </g>
           );
         })}
       </g>
@@ -133,7 +166,11 @@ export function BlueprintDiagram() {
         const tipX = CX + W / 2;
         const elbowX = tipX + 18;
         return (
-          <g key={layer.num}>
+          <g
+            key={layer.num}
+            className="bp-in"
+            style={{ animationDelay: `${(PLAN.length - 1 - i) * 0.22 + 0.18}s` }}
+          >
             <path
               d={`M ${tipX + 4} ${y} H ${elbowX}`}
               stroke="var(--krk-text-muted)"
@@ -212,7 +249,7 @@ export function BlueprintDiagram() {
       </text>
 
       {/* Title block */}
-      <g>
+      <g className="bp-in" style={{ animationDelay: "1.05s" }}>
         <rect
           x="252"
           y="356"

@@ -43,8 +43,7 @@ function TwoWorldsOutro() {
 
       <Reveal>
         <p className="text-center text-xl sm:text-2xl font-bold mt-10">
-          You don&apos;t need better answers.{" "}
-          <span className="grad">You need the work done.</span>
+          Stop asking AI. <span className="grad">Start employing it.</span>
         </p>
       </Reveal>
     </Section>

@@ -23,7 +23,22 @@ const TICKS = [
 
 export function TwoWorlds() {
   const ref = React.useRef<HTMLElement>(null);
+  const contentRef = React.useRef<HTMLDivElement>(null);
   const [p, setP] = React.useState(0);
+  const [tailGap, setTailGap] = React.useState(0);
+
+  // The sticky stage centres its content, which leaves half the viewport
+  // leftover trailing under the card when the section releases. Measure it
+  // and pull the following section up, keeping a 40px breather.
+  React.useEffect(() => {
+    const measure = () => {
+      const c = contentRef.current;
+      if (c) setTailGap(Math.max(0, (window.innerHeight - c.offsetHeight) / 2 - 40));
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   React.useEffect(() => {
     const el = ref.current!;
@@ -52,9 +67,14 @@ export function TwoWorlds() {
   const tick = (i: number) => seg(p, 0.56 + i * 0.08, 0.63 + i * 0.08);
 
   return (
-    <section id="two-worlds" ref={ref} className="relative h-[280vh]">
+    <section
+      id="two-worlds"
+      ref={ref}
+      className="relative h-[280vh]"
+      style={{ marginBottom: tailGap ? -tailGap : undefined }}
+    >
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
-        <div className="max-w-[1100px] w-full mx-auto px-5">
+        <div ref={contentRef} className="max-w-[1100px] w-full mx-auto px-5">
           <p className="krk-section-label mb-3 !text-accent-tertiary-text">SOUND FAMILIAR?</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3">
             You&apos;re using AI like a search engine.

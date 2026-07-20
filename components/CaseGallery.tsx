@@ -49,7 +49,31 @@ export function CaseGallery({ shots }: { shots: Shot[] }) {
   };
 
   const arrowClass =
-    "absolute top-[42%] -translate-y-1/2 z-10 w-11 h-11 rounded-pill border flex items-center justify-center text-lg text-text-primary transition-opacity";
+    "absolute top-[42%] -translate-y-1/2 z-10 w-11 h-11 rounded-pill flex items-center justify-center transition-opacity";
+  const arrowStyle = (visible: boolean): React.CSSProperties => ({
+    background: "var(--krk-accent-tertiary)",
+    boxShadow: "0 0 22px rgba(45, 212, 191, 0.45)",
+    opacity: visible ? 1 : 0,
+    pointerEvents: visible ? "auto" : "none",
+  });
+  const ArrowGlyph = ({ flip }: { flip?: boolean }) => (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      style={flip ? { transform: "scaleX(-1)" } : undefined}
+      aria-hidden="true"
+    >
+      <path
+        d="M3 9h11M9.5 4.5 14 9l-4.5 4.5"
+        stroke="#071310"
+        strokeWidth="2.2"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
   return (
     <div className="relative">
@@ -96,30 +120,18 @@ export function CaseGallery({ shots }: { shots: Shot[] }) {
         aria-label="Scroll the gallery right"
         onClick={() => nudge(1)}
         className={`${arrowClass} right-[-8px] sm:right-2`}
-        style={{
-          background: "color-mix(in srgb, var(--krk-surface-raised) 92%, transparent)",
-          borderColor: "color-mix(in srgb, var(--krk-accent-tertiary) 45%, var(--krk-line-strong))",
-          boxShadow: "0 0 18px rgba(45, 212, 191, 0.25)",
-          opacity: canRight ? 1 : 0,
-          pointerEvents: canRight ? "auto" : "none",
-        }}
+        style={arrowStyle(canRight)}
       >
-        →
+        <ArrowGlyph />
       </button>
       <button
         type="button"
         aria-label="Scroll the gallery left"
         onClick={() => nudge(-1)}
         className={`${arrowClass} left-[-8px] sm:left-2`}
-        style={{
-          background: "color-mix(in srgb, var(--krk-surface-raised) 92%, transparent)",
-          borderColor: "color-mix(in srgb, var(--krk-accent-tertiary) 45%, var(--krk-line-strong))",
-          boxShadow: "0 0 18px rgba(45, 212, 191, 0.25)",
-          opacity: canLeft ? 1 : 0,
-          pointerEvents: canLeft ? "auto" : "none",
-        }}
+        style={arrowStyle(canLeft)}
       >
-        ←
+        <ArrowGlyph flip />
       </button>
     </div>
   );

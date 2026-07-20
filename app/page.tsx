@@ -189,16 +189,16 @@ function Start() {
     <Section id="start">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-center">
         <Reveal>
-          <Eyebrow>THE WAY IN</Eyebrow>
+          <Eyebrow>THE BLUEPRINT</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-            First, we map it. Then we build it.
+            Measure twice. Build once.
           </h2>
           <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
-            Before anything gets built, the <strong className="text-text-primary">Blueprint</strong>:
-            we map your business and show you exactly where AI genuinely helps — what to tackle
-            first, and what to leave alone. Paid work, honestly done — not a sales pitch in
-            disguise. <strong className="text-text-primary">And the fee comes off your first
-            build.</strong>
+            Before anything gets built, we map your business and show you exactly where AI
+            genuinely helps — what to tackle first, and what to leave alone. That&apos;s the{" "}
+            <strong className="text-text-primary">Blueprint</strong>: paid work, honestly done —
+            not a sales pitch in disguise.{" "}
+            <strong className="text-text-primary">And the fee comes off your first build.</strong>
           </p>
         </Reveal>
         <Reveal delay={150}>

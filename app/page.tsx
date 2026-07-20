@@ -1,5 +1,6 @@
 import { BlueprintDiagram } from "@/components/BlueprintDiagram";
 import { BrainDiagram } from "@/components/BrainDiagram";
+import { CaseGallery } from "@/components/CaseGallery";
 import { Hero } from "@/components/Hero";
 import { Layers } from "@/components/Layers";
 import { Reveal } from "@/components/Reveal";
@@ -311,29 +312,7 @@ function CaseStudy() {
       {/* Sideways-scrolling interface gallery */}
       <div className="max-w-[1100px] mx-auto px-5 mt-12">
         <Reveal>
-          <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5">
-            {CASE_SHOTS.map(({ src, caption }) => (
-              <figure
-                key={src}
-                className="krk-card shrink-0 snap-center w-[85%] sm:w-[520px] overflow-hidden"
-              >
-                {/* Fake browser chrome */}
-                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-line bg-surface-base">
-                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-70" />
-                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-40" />
-                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-20" />
-                  <span className="krk-section-label !text-[10px] ml-2 !text-text-muted">
-                    MISSION CONTROL
-                  </span>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={caption} loading="lazy" className="aspect-video w-full" />
-                <figcaption className="px-4 py-3 text-sm text-text-secondary border-t border-line">
-                  {caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <CaseGallery shots={CASE_SHOTS} />
           <div className="flex flex-wrap items-center justify-between gap-2 mt-1">
             <p className="text-xs text-text-muted tracking-widest">SCROLL SIDEWAYS →</p>
             <p className="text-xs text-text-muted">

@@ -264,9 +264,11 @@ function Name() {
           The stagehands you&apos;re not meant to see.
         </h2>
         <p className="text-lg text-text-secondary max-w-[640px] mx-auto leading-relaxed">
-          In Japanese theatre, the <em>kuroko</em> move the scenery and hand the actors their
-          props — dressed head to toe in black, in plain sight, invisible by agreement.
-          That&apos;s the AI we build. It does the work. You take the applause.
+          In Japanese theatre, the <em>kuroko</em>&nbsp;are the stagehands: dressed head to toe
+          in black, they move the scenery and hand the actors their props — in plain sight,
+          invisible by agreement. The show runs because of them. The applause never goes to
+          them. That&apos;s the AI we build.{" "}
+          <strong className="text-text-primary">It does the work. You take the applause.</strong>
         </p>
       </Reveal>
     </Section>

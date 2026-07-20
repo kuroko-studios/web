@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <style>
+    .m{font-family:ui-monospace,'SF Mono',Menlo,monospace}
+    .h1{font-size:34px;font-weight:700;fill:#E7ECF3}
+    .nav{font-size:14.5px;fill:#A7B2C2}
+    .navA{font-size:14.5px;font-weight:600;fill:#6CA8FF}
+    .col{font-size:12px;letter-spacing:.1em;fill:#A7B2C2;font-weight:700}
+    .sub{font-size:13.5px;fill:#A7B2C2}
+    .mut{font-size:13px;fill:#6B7688}
+    .chip{font-size:12.5px;font-weight:600}
+    .ttl{font-size:16px;font-weight:600;fill:#E7ECF3}
+    .val{font-size:14px;fill:#A7B2C2}
+  </style>
+  <rect width="1600" height="900" fill="#0A0F16"/>
+
+  <!-- Sidebar -->
+  <rect width="260" height="900" fill="#0C1117"/>
+  <line x1="260" y1="0" x2="260" y2="900" stroke="#1C2530"/>
+  <text x="24" y="54" font-size="24" font-weight="800" fill="#FFFFFF">bluejuice.</text>
+  <g class="nav">
+    <text x="52" y="126">Home</text>
+    <text x="52" y="172">Inbox</text>
+    <circle cx="230" cy="167" r="10" fill="#3E82F7"/><text x="230" y="171" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+    <text x="52" y="218">Tasks</text>
+    <text x="52" y="264">Calendar</text>
+    <text x="52" y="310">Clients</text>
+    <rect x="8" y="328" width="244" height="40" rx="8" fill="#14202E"/>
+    <rect x="8" y="328" width="3" height="40" rx="1.5" fill="#3E82F7"/>
+    <text x="52" y="354" class="navA">Projects</text>
+    <text x="52" y="402">Pre-Sales</text>
+    <text x="52" y="448">Pre-Production</text>
+    <text x="52" y="494">Production</text>
+    <text x="52" y="540">Post-Production</text>
+    <text x="52" y="586">Finance</text>
+    <text x="52" y="632">Equipment</text>
+    <text x="52" y="678">Studio</text>
+    <text x="52" y="724">Settings</text>
+  </g>
+  <g>
+    <rect x="26" y="118" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="164" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="210" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="256" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="302" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="341" width="15" height="15" rx="3" stroke="#6CA8FF" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="394" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="440" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="486" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="532" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="578" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="624" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="670" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="716" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+  </g>
+  <rect x="16" y="768" width="228" height="46" rx="10" fill="#101823" stroke="#2A3546"/>
+  <circle cx="38" cy="791" r="4" fill="#34C77B"/>
+  <text x="52" y="796" class="sub">Agents — 4 running</text>
+  <line x1="0" y1="832" x2="260" y2="832" stroke="#1C2530"/>
+  <circle cx="38" cy="864" r="17" fill="#1B2836"/>
+  <text x="38" y="869" text-anchor="middle" font-size="12" font-weight="700" fill="#A7B2C2">CS</text>
+  <text x="64" y="860" font-size="14" fill="#E7ECF3">Craig Sawyer</text>
+  <text x="64" y="878" font-size="10.5" class="m" fill="#6B7688">ADMIN</text>
+
+  <!-- Header -->
+  <text x="300" y="72" class="h1">Projects</text>
+  <rect x="300" y="98" width="470" height="38" rx="10" fill="#101825" stroke="#232E3F"/>
+  <rect x="304" y="102" width="110" height="30" rx="8" fill="#1B2836"/>
+  <text x="322" y="122" class="chip" fill="#E7ECF3">Active</text><text x="382" y="122" class="chip" fill="#6B7688">24</text>
+  <text x="436" y="122" class="chip" fill="#6B7688">Inactive  1</text>
+  <text x="546" y="122" class="chip" fill="#6B7688">Archived  11</text>
+  <text x="676" y="122" class="chip" fill="#6B7688">All  36</text>
+  <text x="1240" y="122" class="mut">24 projects</text>
+  <rect x="1360" y="98" width="150" height="38" rx="10" fill="#3E82F7"/>
+  <text x="1435" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+ New Project</text>
+
+  <!-- Columns -->
+  <g class="col">
+    <circle cx="308" cy="180" r="4" fill="#6B7688"/><text x="322" y="185">PRE-SALES</text><text x="608" y="185" text-anchor="end" fill="#6B7688">8</text>
+    <circle cx="638" cy="180" r="4" fill="#34C77B"/><text x="652" y="185">PRE-PRODUCTION</text><text x="938" y="185" text-anchor="end" fill="#6B7688">4</text>
+    <circle cx="968" cy="180" r="4" fill="#E8A23D"/><text x="982" y="185">PRODUCTION</text><text x="1268" y="185" text-anchor="end" fill="#6B7688">2</text>
+    <circle cx="1298" cy="180" r="4" fill="#8E7CF3"/><text x="1312" y="185">POST-PRODUCTION</text><text x="1570" y="185" text-anchor="end" fill="#6B7688">9</text>
+  </g>
+  <line x1="300" y1="200" x2="1570" y2="200" stroke="#1C2530"/>
+  <line x1="623" y1="164" x2="623" y2="860" stroke="#141c28"/>
+  <line x1="953" y1="164" x2="953" y2="860" stroke="#141c28"/>
+  <line x1="1283" y1="164" x2="1283" y2="860" stroke="#141c28"/>
+
+  <!-- Column 1: PRE-SALES -->
+  <g>
+    <rect x="300" y="220" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="316" y="236" width="30" height="30" rx="8" fill="#1B2836"/><text x="331" y="256" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">MT</text>
+    <text x="356" y="257" class="sub">Meridian Travel</text>
+    <circle cx="580" cy="243" r="4" fill="#34C77B"/>
+    <text x="316" y="300" class="ttl">2027 Retainer</text>
+    <text x="316" y="324" class="m" font-size="12.5" fill="#6B7688">MT-2701</text>
+    <circle cx="330" cy="350" r="12" fill="#1B2836"/><text x="330" y="354" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+    <text x="576" y="354" text-anchor="end" class="m" font-size="11" fill="#6B7688">0%</text>
+  </g>
+  <g>
+    <rect x="300" y="386" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="316" y="402" width="30" height="30" rx="8" fill="#1B2836"/><text x="331" y="422" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">WF</text>
+    <text x="356" y="423" class="sub">Westbrook FC</text>
+    <circle cx="580" cy="409" r="4" fill="#34C77B"/>
+    <text x="316" y="466" class="ttl">Season Launch Film</text>
+    <text x="316" y="490" class="m" font-size="12.5" fill="#6B7688">WF-2602</text>
+    <text x="316" y="520" class="val">£8,400</text>
+    <circle cx="576" cy="514" r="12" fill="#1B2836"/><text x="576" y="518" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+  </g>
+  <g>
+    <rect x="300" y="552" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="316" y="568" width="30" height="30" rx="8" fill="#1B2836"/><text x="331" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">OH</text>
+    <text x="356" y="589" class="sub">Orchard Health</text>
+    <circle cx="580" cy="575" r="4" fill="#34C77B"/>
+    <text x="316" y="632" class="ttl">Recruitment Video</text>
+    <text x="316" y="656" class="m" font-size="12.5" fill="#6B7688">OH-2604</text>
+    <text x="316" y="686" class="val">£4,200</text>
+    <circle cx="576" cy="680" r="12" fill="#1B2836"/><text x="576" y="684" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">JT</text>
+  </g>
+  <text x="300" y="848" class="m" font-size="13" fill="#6B7688">£24,800</text>
+
+  <!-- Column 2: PRE-PRODUCTION -->
+  <g>
+    <rect x="630" y="220" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="646" y="236" width="30" height="30" rx="8" fill="#1B2836"/><text x="661" y="256" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">FH</text>
+    <text x="686" y="257" class="sub">Fieldstone Hotels</text>
+    <circle cx="910" cy="243" r="4" fill="#34C77B"/>
+    <text x="646" y="300" class="ttl">Spring Campaign</text>
+    <text x="646" y="324" class="m" font-size="12.5" fill="#6B7688">FH-2603</text>
+    <text x="646" y="354" class="val">£6,800</text>
+    <circle cx="906" cy="348" r="12" fill="#1B2836"/><text x="906" y="352" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+  </g>
+  <g>
+    <rect x="630" y="386" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="646" y="402" width="30" height="30" rx="8" fill="#1B2836"/><text x="661" y="422" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">BM</text>
+    <text x="686" y="423" class="sub">Bright &amp; Main</text>
+    <circle cx="910" cy="409" r="4" fill="#E5605E"/>
+    <text x="646" y="466" class="ttl">Product Launch Socials</text>
+    <text x="646" y="490" class="m" font-size="12.5" fill="#6B7688">BM-2606</text>
+    <text x="646" y="520" class="val">£2,400</text>
+    <circle cx="906" cy="514" r="12" fill="#1B2836"/><text x="906" y="518" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">EF</text>
+  </g>
+  <g>
+    <rect x="630" y="552" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="646" y="568" width="30" height="30" rx="8" fill="#1B2836"/><text x="661" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">NL</text>
+    <text x="686" y="589" class="sub">Northgate Legal</text>
+    <circle cx="910" cy="575" r="4" fill="#34C77B"/>
+    <text x="646" y="632" class="ttl">Partner Profiles</text>
+    <text x="646" y="656" class="m" font-size="12.5" fill="#6B7688">NL-2601</text>
+    <text x="646" y="686" class="val">£2,600</text>
+    <circle cx="906" cy="680" r="12" fill="#1B2836"/><text x="906" y="684" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">SR</text>
+  </g>
+  <text x="630" y="848" class="m" font-size="13" fill="#6B7688">£11,800</text>
+
+  <!-- Column 3: PRODUCTION -->
+  <g>
+    <rect x="960" y="220" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="976" y="236" width="30" height="30" rx="8" fill="#1B2836"/><text x="991" y="256" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">AL</text>
+    <text x="1016" y="257" class="sub">Atlas Leisure</text>
+    <circle cx="1240" cy="243" r="4" fill="#34C77B"/>
+    <text x="976" y="300" class="ttl">Product Photography</text>
+    <text x="976" y="324" class="m" font-size="12.5" fill="#6B7688">AL-2601</text>
+    <text x="976" y="354" class="val">£5,900</text>
+    <circle cx="1236" cy="348" r="12" fill="#1B2836"/><text x="1236" y="352" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+  </g>
+  <g>
+    <rect x="960" y="386" width="300" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="976" y="402" width="30" height="30" rx="8" fill="#1B2836"/><text x="991" y="422" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">HC</text>
+    <text x="1016" y="423" class="sub">Harrison &amp; Co</text>
+    <circle cx="1240" cy="409" r="4" fill="#34C77B"/>
+    <text x="976" y="466" class="ttl">Brand Film 2026</text>
+    <text x="976" y="490" class="m" font-size="12.5" fill="#6B7688">HC-2602</text>
+    <text x="976" y="520" class="val">£12,000</text>
+    <circle cx="1236" cy="514" r="12" fill="#1B2836"/><text x="1236" y="518" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">JT</text>
+  </g>
+  <text x="960" y="848" class="m" font-size="13" fill="#6B7688">£17,900</text>
+
+  <!-- Column 4: POST-PRODUCTION -->
+  <g>
+    <rect x="1290" y="220" width="280" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="1306" y="236" width="30" height="30" rx="8" fill="#1B2836"/><text x="1321" y="256" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">TG</text>
+    <text x="1346" y="257" class="sub">The Grange</text>
+    <circle cx="1550" cy="243" r="4" fill="#34C77B"/>
+    <text x="1306" y="300" class="ttl">Venue Pitch Video</text>
+    <text x="1306" y="324" class="m" font-size="12.5" fill="#6B7688">TG-2601</text>
+    <circle cx="1546" cy="348" r="12" fill="#1B2836"/><text x="1546" y="352" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+  </g>
+  <g>
+    <rect x="1290" y="386" width="280" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="1306" y="402" width="30" height="30" rx="8" fill="#1B2836"/><text x="1321" y="422" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">JH</text>
+    <text x="1346" y="423" class="sub">Juniper Homes</text>
+    <circle cx="1550" cy="409" r="4" fill="#34C77B"/>
+    <text x="1306" y="466" class="ttl">Show Home Tour</text>
+    <text x="1306" y="490" class="m" font-size="12.5" fill="#6B7688">JH-2607</text>
+    <text x="1306" y="520" class="val">£2,600</text>
+    <circle cx="1546" cy="514" r="12" fill="#1B2836"/><text x="1546" y="518" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">SR</text>
+  </g>
+  <g>
+    <rect x="1290" y="552" width="280" height="150" rx="12" fill="#0E1520" stroke="#1D2735"/>
+    <rect x="1306" y="568" width="30" height="30" rx="8" fill="#1B2836"/><text x="1321" y="588" text-anchor="middle" font-size="11" font-weight="700" fill="#A7B2C2">BJ</text>
+    <text x="1346" y="589" class="sub">Blue Juice</text>
+    <circle cx="1550" cy="575" r="4" fill="#34C77B"/>
+    <text x="1306" y="632" class="ttl">Marketing</text>
+    <text x="1306" y="656" class="m" font-size="12.5" fill="#6B7688">BJ-2603</text>
+    <circle cx="1546" cy="680" r="12" fill="#1B2836"/><text x="1546" y="684" text-anchor="middle" font-size="10" font-weight="700" fill="#A7B2C2">CS</text>
+  </g>
+  <text x="1290" y="848" class="m" font-size="13" fill="#6B7688">£14,700</text>
+</svg>

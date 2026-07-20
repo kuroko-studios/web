@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <style>
+    .m{font-family:ui-monospace,'SF Mono',Menlo,monospace}
+    .h1{font-size:34px;font-weight:700;fill:#E7ECF3}
+    .nav{font-size:14.5px;fill:#A7B2C2}
+    .navA{font-size:14.5px;font-weight:600;fill:#6CA8FF}
+    .lbl{font-size:11.5px;letter-spacing:.1em;fill:#6B7688;font-weight:600}
+    .txt{font-size:15.5px;fill:#E7ECF3}
+    .sub{font-size:13.5px;fill:#A7B2C2}
+    .mut{font-size:13px;fill:#6B7688}
+    .pill{font-size:11px;font-weight:700;letter-spacing:.04em}
+    .chip{font-size:12.5px;font-weight:600}
+  </style>
+  <rect width="1600" height="900" fill="#0A0F16"/>
+
+  <!-- Sidebar -->
+  <rect width="260" height="900" fill="#0C1117"/>
+  <line x1="260" y1="0" x2="260" y2="900" stroke="#1C2530"/>
+  <text x="24" y="54" font-size="24" font-weight="800" fill="#FFFFFF">bluejuice.</text>
+  <g class="nav">
+    <text x="52" y="126">Home</text>
+    <text x="52" y="172">Inbox</text>
+    <circle cx="230" cy="167" r="10" fill="#3E82F7"/><text x="230" y="171" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+    <rect x="8" y="190" width="244" height="40" rx="8" fill="#14202E"/>
+    <rect x="8" y="190" width="3" height="40" rx="1.5" fill="#3E82F7"/>
+    <text x="52" y="216" class="navA">Tasks</text>
+    <text x="52" y="264">Calendar</text>
+    <text x="52" y="310">Clients</text>
+    <text x="52" y="356">Projects</text>
+    <text x="52" y="402">Pre-Sales</text>
+    <text x="52" y="448">Pre-Production</text>
+    <text x="52" y="494">Production</text>
+    <text x="52" y="540">Post-Production</text>
+    <text x="52" y="586">Finance</text>
+    <text x="52" y="632">Equipment</text>
+    <text x="52" y="678">Studio</text>
+    <text x="52" y="724">Settings</text>
+  </g>
+  <g>
+    <rect x="26" y="118" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="164" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="203" width="15" height="15" rx="3" stroke="#6CA8FF" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="256" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="302" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="348" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="394" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="440" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="486" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="532" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="578" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="624" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="670" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+    <rect x="26" y="716" width="15" height="15" rx="3" stroke="#5A6678" fill="none" stroke-width="1.5"/>
+  </g>
+  <rect x="16" y="768" width="228" height="46" rx="10" fill="#101823" stroke="#2A3546"/>
+  <circle cx="38" cy="791" r="4" fill="#34C77B"/>
+  <text x="52" y="796" class="sub">Agents — 4 running</text>
+  <line x1="0" y1="832" x2="260" y2="832" stroke="#1C2530"/>
+  <circle cx="38" cy="864" r="17" fill="#1B2836"/>
+  <text x="38" y="869" text-anchor="middle" font-size="12" font-weight="700" fill="#A7B2C2">CS</text>
+  <text x="64" y="860" font-size="14" fill="#E7ECF3">Craig Sawyer</text>
+  <text x="64" y="878" font-size="10.5" class="m" fill="#6B7688">ADMIN</text>
+
+  <!-- Header -->
+  <text x="300" y="72" class="h1">Tasks</text>
+  <text x="300" y="102" class="sub">Your tasks</text>
+  <line x1="260" y1="128" x2="1600" y2="128" stroke="#1C2530"/>
+  <text x="300" y="164" class="mut">Filters &amp; views · 16 tasks</text>
+  <rect x="1420" y="142" width="150" height="38" rx="10" fill="#3E82F7"/>
+  <text x="1495" y="166" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">+ New Task</text>
+
+  <!-- Filter pills -->
+  <g>
+    <rect x="300" y="196" width="56" height="32" rx="16" fill="#3E82F7"/>
+    <text x="328" y="217" text-anchor="middle" class="chip" fill="#fff">All</text>
+    <rect x="366" y="196" width="104" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="418" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">Due Today</text>
+    <rect x="480" y="196" width="150" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="555" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">Working On Today</text>
+    <rect x="640" y="196" width="94" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="687" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">Overdue</text>
+    <rect x="744" y="196" width="112" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="800" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">Not Started</text>
+    <rect x="866" y="196" width="112" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="922" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">In Progress</text>
+    <rect x="988" y="196" width="118" height="32" rx="16" fill="#101825" stroke="#232E3F"/>
+    <text x="1047" y="217" text-anchor="middle" class="chip" fill="#A7B2C2">Client Review</text>
+  </g>
+
+  <!-- Table -->
+  <rect x="300" y="252" width="1270" height="628" rx="14" fill="#0E1520" stroke="#1D2735"/>
+  <g class="lbl">
+    <text x="330" y="292">TASK</text>
+    <text x="760" y="292">PROJECT</text>
+    <text x="1010" y="292">PRIORITY</text>
+    <text x="1160" y="292">STAGE</text>
+    <text x="1420" y="292">DUE</text>
+  </g>
+  <line x1="300" y1="310" x2="1570" y2="310" stroke="#1D2735"/>
+
+  <!-- Row 1 -->
+  <text x="330" y="360" class="txt">Draft treatment — Brand Film 2026</text>
+  <text x="760" y="360" class="sub">Harrison &amp; Co</text>
+  <rect x="1010" y="342" width="62" height="26" rx="13" fill="#2E2413"/>
+  <circle cx="1026" cy="355" r="3.5" fill="#E8A23D"/><text x="1036" y="359" class="pill" fill="#E8A23D">HIGH</text>
+  <rect x="1160" y="342" width="112" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1176" cy="355" r="3.5" fill="#3E82F7"/><text x="1186" y="359" class="pill" fill="#6CA8FF">In Progress</text>
+  <text x="1420" y="360" class="m" font-size="14" fill="#E5605E">20 Jul 2026</text>
+  <line x1="300" y1="392" x2="1570" y2="392" stroke="#161f2c"/>
+
+  <!-- Row 2 -->
+  <text x="330" y="442" class="txt">Social cuts — client review round 1</text>
+  <rect x="620" y="424" width="92" height="26" rx="13" fill="#201D33"/><text x="666" y="442" text-anchor="middle" class="pill" fill="#8E7CF3">Deliverable</text>
+  <text x="760" y="442" class="sub">Meridian Travel</text>
+  <rect x="1010" y="424" width="62" height="26" rx="13" fill="#2E2413"/>
+  <circle cx="1026" cy="437" r="3.5" fill="#E8A23D"/><text x="1036" y="441" class="pill" fill="#E8A23D">HIGH</text>
+  <rect x="1160" y="424" width="122" height="26" rx="13" fill="#2E2413"/>
+  <circle cx="1176" cy="437" r="3.5" fill="#E8A23D"/><text x="1186" y="441" class="pill" fill="#E8A23D">Client Review</text>
+  <text x="1420" y="442" class="m" font-size="14" fill="#E5605E">20 Jul 2026</text>
+  <line x1="300" y1="474" x2="1570" y2="474" stroke="#161f2c"/>
+
+  <!-- Row 3 -->
+  <text x="330" y="524" class="txt">Chase overdue invoices — automated run</text>
+  <rect x="672" y="506" width="70" height="26" rx="13" fill="#12291C"/><text x="707" y="524" text-anchor="middle" class="pill" fill="#34C77B">Agent</text>
+  <text x="760" y="524" class="sub">Operations</text>
+  <rect x="1010" y="506" width="62" height="26" rx="13" fill="#2E2413"/>
+  <circle cx="1026" cy="519" r="3.5" fill="#E8A23D"/><text x="1036" y="523" class="pill" fill="#E8A23D">HIGH</text>
+  <rect x="1160" y="506" width="112" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1176" cy="519" r="3.5" fill="#3E82F7"/><text x="1186" y="523" class="pill" fill="#6CA8FF">In Progress</text>
+  <text x="1420" y="524" class="m" font-size="14" fill="#A7B2C2">21 Jul 2026</text>
+  <line x1="300" y1="556" x2="1570" y2="556" stroke="#161f2c"/>
+
+  <!-- Row 4 -->
+  <text x="330" y="606" class="txt">Book studio &amp; kit — product shoot</text>
+  <text x="760" y="606" class="sub">Fieldstone Hotels</text>
+  <rect x="1010" y="588" width="80" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1026" cy="601" r="3.5" fill="#3E82F7"/><text x="1036" y="605" class="pill" fill="#6CA8FF">MEDIUM</text>
+  <rect x="1160" y="588" width="110" height="26" rx="13" fill="#1A2230"/>
+  <circle cx="1176" cy="601" r="3.5" fill="#6B7688"/><text x="1186" y="605" class="pill" fill="#A7B2C2">Not Started</text>
+  <text x="1420" y="606" class="m" font-size="14" fill="#A7B2C2">22 Jul 2026</text>
+  <line x1="300" y1="638" x2="1570" y2="638" stroke="#161f2c"/>
+
+  <!-- Row 5 -->
+  <text x="330" y="688" class="txt">Edit v2 — Recruitment Video</text>
+  <rect x="580" y="670" width="92" height="26" rx="13" fill="#201D33"/><text x="626" y="688" text-anchor="middle" class="pill" fill="#8E7CF3">Deliverable</text>
+  <text x="760" y="688" class="sub">Northgate Legal</text>
+  <rect x="1010" y="670" width="80" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1026" cy="683" r="3.5" fill="#3E82F7"/><text x="1036" y="687" class="pill" fill="#6CA8FF">MEDIUM</text>
+  <rect x="1160" y="670" width="128" height="26" rx="13" fill="#201D33"/>
+  <circle cx="1176" cy="683" r="3.5" fill="#8E7CF3"/><text x="1186" y="687" class="pill" fill="#8E7CF3">Internal Review</text>
+  <text x="1420" y="688" class="m" font-size="14" fill="#A7B2C2">23 Jul 2026</text>
+  <line x1="300" y1="720" x2="1570" y2="720" stroke="#161f2c"/>
+
+  <!-- Row 6 -->
+  <text x="330" y="770" class="txt">Morning brief — inbox &amp; calendar digest</text>
+  <rect x="662" y="752" width="70" height="26" rx="13" fill="#12291C"/><text x="697" y="770" text-anchor="middle" class="pill" fill="#34C77B">Agent</text>
+  <text x="760" y="770" class="sub">Operations</text>
+  <rect x="1010" y="752" width="80" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1026" cy="765" r="3.5" fill="#3E82F7"/><text x="1036" y="769" class="pill" fill="#6CA8FF">MEDIUM</text>
+  <rect x="1160" y="752" width="94" height="26" rx="13" fill="#12291C"/>
+  <circle cx="1176" cy="765" r="3.5" fill="#34C77B"/><text x="1186" y="769" class="pill" fill="#34C77B">Done daily</text>
+  <text x="1420" y="770" class="m" font-size="14" fill="#A7B2C2">Every 07:30</text>
+  <line x1="300" y1="802" x2="1570" y2="802" stroke="#161f2c"/>
+
+  <!-- Row 7 -->
+  <text x="330" y="852" class="txt">Send quote — Factory Tour Film</text>
+  <text x="760" y="852" class="sub">Atlas Leisure</text>
+  <rect x="1010" y="834" width="80" height="26" rx="13" fill="#14263F"/>
+  <circle cx="1026" cy="847" r="3.5" fill="#3E82F7"/><text x="1036" y="851" class="pill" fill="#6CA8FF">MEDIUM</text>
+  <rect x="1160" y="834" width="110" height="26" rx="13" fill="#1A2230"/>
+  <circle cx="1176" cy="847" r="3.5" fill="#6B7688"/><text x="1186" y="851" class="pill" fill="#A7B2C2">Not Started</text>
+  <text x="1420" y="852" class="m" font-size="14" fill="#A7B2C2">24 Jul 2026</text>
+</svg>

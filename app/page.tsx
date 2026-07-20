@@ -261,12 +261,21 @@ const CASE_RESULTS = [
   ["One live view", "greater visibility, and proactive action, across the whole business."],
 ];
 
-/* Screen-grab slots — swap each placeholder for an <img> when the
-   Mission Control grabs land in public/case/. */
+/* Illustrative recreations of the Mission Control interface —
+   real layouts, fictional clients, people and figures. */
 const CASE_SHOTS = [
-  "The whole business, one view",
-  "The pipeline, live",
-  "AI agents on the repetitive work",
+  {
+    src: "/case/mission-control-projects.svg",
+    caption: "The pipeline, live — every project from pre-sales to delivery",
+  },
+  {
+    src: "/case/mission-control-tasks.svg",
+    caption: "Every task in one list — with AI agents handling the repetitive ones",
+  },
+  {
+    src: "/case/mission-control-project.svg",
+    caption: "A live project — deliverables, crew, kit and cut reviews in one place",
+  },
 ];
 
 function CaseStudy() {
@@ -303,9 +312,9 @@ function CaseStudy() {
       <div className="max-w-[1100px] mx-auto px-5 mt-12">
         <Reveal>
           <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5">
-            {CASE_SHOTS.map((caption) => (
+            {CASE_SHOTS.map(({ src, caption }) => (
               <figure
-                key={caption}
+                key={src}
                 className="krk-card shrink-0 snap-center w-[85%] sm:w-[520px] overflow-hidden"
               >
                 {/* Fake browser chrome */}
@@ -317,17 +326,20 @@ function CaseStudy() {
                     MISSION CONTROL
                   </span>
                 </div>
-                {/* Placeholder face — replaced by the real screen grab */}
-                <div className="aspect-video flex items-center justify-center bg-surface-page">
-                  <p className="krk-section-label !text-text-muted">SCREEN GRAB COMING</p>
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={caption} loading="lazy" className="aspect-video w-full" />
                 <figcaption className="px-4 py-3 text-sm text-text-secondary border-t border-line">
                   {caption}
                 </figcaption>
               </figure>
             ))}
           </div>
-          <p className="text-xs text-text-muted tracking-widest mt-1">SCROLL SIDEWAYS →</p>
+          <div className="flex flex-wrap items-center justify-between gap-2 mt-1">
+            <p className="text-xs text-text-muted tracking-widest">SCROLL SIDEWAYS →</p>
+            <p className="text-xs text-text-muted">
+              Interface shown with illustrative data — real client details are confidential.
+            </p>
+          </div>
         </Reveal>
       </div>
 

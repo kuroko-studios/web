@@ -283,15 +283,16 @@ function ClosingCta() {
           className="krk-card px-8 py-14 max-w-[760px] mx-auto"
           style={{ boxShadow: "var(--krk-glow-accent-soft)" }}
         >
-          <Eyebrow>START HERE</Eyebrow>
+          <Eyebrow>THE READINESS CHECK</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-5">
-            Five minutes. An honest answer.
+            Is your business ready?
           </h2>
           <p className="text-text-secondary max-w-[540px] mx-auto leading-relaxed mb-8">
-            Tell us how your business runs today and we&apos;ll come back within two working
-            days with where AI could genuinely help — which of the three tiers fits, and what
-            we&apos;d tackle first. We reply personally. This doesn&apos;t go into a marketing
-            funnel.
+            Answer a few plain questions about how your business runs — five minutes, no
+            jargon. Within two working days you&apos;ll get an honest read: where AI genuinely
+            fits, which tier that points to, and what we&apos;d tackle first. Written by a
+            person, sent to you directly. And if the answer is &ldquo;not yet&rdquo;,
+            we&apos;ll say so.
           </p>
           <a href={CHECK_URL} className="krk-btn krk-btn--primary">
             Take the readiness check

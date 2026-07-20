@@ -110,9 +110,9 @@ export default function ReadinessCheck() {
         <Card className="max-w-[640px] mx-auto p-10 text-center">
           <h2 className="text-xl font-bold mb-2.5">Thanks — we&apos;re on it.</h2>
           <p className="text-md text-text-secondary leading-relaxed">
-            You&apos;ll hear from us within two working days with an honest read
-            on where AI fits your business, which of our three tiers matches,
-            and what we&apos;d tackle first.
+            You&apos;ll hear from us with an honest read on where AI fits your
+            business, which of our three tiers matches, and what we&apos;d
+            tackle first.
           </p>
         </Card>
       </main>
@@ -124,8 +124,8 @@ export default function ReadinessCheck() {
       <Card className="max-w-[640px] mx-auto p-7 sm:p-9">
         <h1 className="text-2xl font-bold mb-1.5">AI readiness check</h1>
         <p className="text-md text-text-secondary leading-normal mb-7">
-          Five minutes, no jargon. We&apos;ll come back within two working days
-          with where AI could genuinely help your business — and where it
+          Five minutes, no jargon. We&apos;ll come back with an honest read on
+          where AI could genuinely help your business — and where it
           can&apos;t.
         </p>
 

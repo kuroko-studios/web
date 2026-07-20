@@ -289,7 +289,7 @@ function ClosingCta() {
           </h2>
           <p className="text-text-secondary max-w-[540px] mx-auto leading-relaxed mb-8">
             Answer a few plain questions about how your business runs — five minutes, no
-            jargon. Within two working days you&apos;ll get an honest read: where AI genuinely
+            jargon. You&apos;ll get an honest read: where AI genuinely
             fits, which tier that points to, and what we&apos;d tackle first. Written by a
             person, sent to you directly. And if the answer is &ldquo;not yet&rdquo;,
             we&apos;ll say so.

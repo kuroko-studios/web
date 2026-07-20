@@ -225,9 +225,6 @@ function Start() {
           whole business — and <strong className="text-text-primary">the Brand System</strong>,
           your look and voice packaged so AI gets them right every time.
         </p>
-        <p className="text-xl font-bold mt-8">
-          No big bang, no leap of faith. One step, proved, then the next.
-        </p>
       </Reveal>
     </Section>
   );
@@ -242,13 +239,7 @@ const PROMISES = [
 
 function Promises() {
   return (
-    <Section>
-      <Reveal>
-        <Eyebrow>THE RULES</Eyebrow>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-10">
-          Three promises we don&apos;t break.
-        </h2>
-      </Reveal>
+    <Section className="!pt-0">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {PROMISES.map(([title, body], i) => (
           <Reveal key={title} delay={i * 90}>

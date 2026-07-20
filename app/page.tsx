@@ -254,6 +254,100 @@ function Promises() {
   );
 }
 
+/* ------------------------------------------------ case study: blue juice */
+const CASE_RESULTS = [
+  ["≈ £1,000 a month back", "in subscriptions Mission Control replaced."],
+  ["Creative time reclaimed", "the team works on what they're paid to do best — not repetitive admin."],
+  ["One live view", "greater visibility, and proactive action, across the whole business."],
+];
+
+/* Screen-grab slots — swap each placeholder for an <img> when the
+   Mission Control grabs land in public/case/. */
+const CASE_SHOTS = [
+  "The whole business, one view",
+  "The pipeline, live",
+  "AI agents on the repetitive work",
+];
+
+function CaseStudy() {
+  return (
+    <section id="case-study" className="py-24">
+      <div className="max-w-[1100px] mx-auto px-5">
+        <Reveal>
+          <Eyebrow>CASE STUDY · BLUE JUICE</Eyebrow>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+            From scattered tools to Mission Control.
+          </h2>
+          <p className="text-lg text-text-secondary max-w-[680px] leading-relaxed">
+            Blue Juice, a creative production company, ran on a pile of separate platforms —
+            information scattered everywhere, a subscription for everything. Kuroko pulled it
+            all into <strong className="text-text-primary">Mission Control</strong>: one
+            consolidated view of the whole business, with AI agents quietly working through
+            the repetitive admin in the background.
+          </p>
+        </Reveal>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+          {CASE_RESULTS.map(([stat, detail], i) => (
+            <Reveal key={stat} delay={i * 90}>
+              <div className="krk-card p-6 h-full">
+                <h3 className="font-bold text-accent-tertiary-text mb-1">{stat}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{detail}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* Sideways-scrolling interface gallery */}
+      <div className="max-w-[1100px] mx-auto px-5 mt-12">
+        <Reveal>
+          <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5">
+            {CASE_SHOTS.map((caption) => (
+              <figure
+                key={caption}
+                className="krk-card shrink-0 snap-center w-[85%] sm:w-[520px] overflow-hidden"
+              >
+                {/* Fake browser chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-line bg-surface-base">
+                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-70" />
+                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-40" />
+                  <span className="w-2 h-2 rounded-pill bg-accent-default opacity-20" />
+                  <span className="krk-section-label !text-[10px] ml-2 !text-text-muted">
+                    MISSION CONTROL
+                  </span>
+                </div>
+                {/* Placeholder face — replaced by the real screen grab */}
+                <div className="aspect-video flex items-center justify-center bg-surface-page">
+                  <p className="krk-section-label !text-text-muted">SCREEN GRAB COMING</p>
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-text-secondary border-t border-line">
+                  {caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="text-xs text-text-muted tracking-widest mt-1">SCROLL SIDEWAYS →</p>
+        </Reveal>
+      </div>
+
+      <div className="max-w-[1100px] mx-auto px-5 mt-12">
+        <Reveal>
+          <blockquote className="krk-card p-7 sm:p-8 max-w-[760px] mx-auto text-center">
+            <p className="text-xl leading-relaxed font-semibold">
+              &ldquo;It&apos;s freed me up to do what I do best: look at Mission Control and
+              decide what we build next.&rdquo;
+            </p>
+            <footer className="text-text-muted text-sm mt-4">
+              Craig · Founder, Blue Juice
+            </footer>
+          </blockquote>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ------------------------------------------------ the name + CTA */
 function Name() {
   return (
@@ -315,6 +409,7 @@ export default function HomePage() {
       <Questions />
       <Start />
       <Promises />
+      <CaseStudy />
       <Name />
       <ClosingCta />
     </main>
